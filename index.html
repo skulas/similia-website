@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סימיליה - בית ספר להומאופתיה קלאסית ותודעה גבוהה</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Secular+One&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        similia: {
+                            darkBlue: '#20436d',
+                            midBlue: '#2b5c8f',
+                            lightBlue: '#ebf1f7',
+                            gold: '#c5a059',
+                            goldDark: '#9e7d3b',
+                            cream: '#fbfaf6',
+                            charcoal: '#1d232a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                        serif: ['Secular One', 'serif'],
+                        decorative: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fbfaf6; color: #1d232a; scroll-behavior: smooth; }
+        ::selection { background-color: #c5a059; color: white; }
+        .wave-bar { animation: bounce 1.8s ease-in-out infinite alternate; }
+        @keyframes bounce { 0% { transform: scaleY(0.3); } 100% { transform: scaleY(1.1); } }
+        .gallery-card img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gallery-card:hover img { transform: scale(1.08); }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-similia-cream/95 backdrop-blur-md border-b border-similia-gold/20 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="לוגו%20%20סימיליה%20חדש_2.jpg" alt="סימיליה לוגו" class="h-14 w-14 object-contain rounded-full shadow-inner border border-similia-gold/10" onerror="this.src='https://placehold.co/100x100/20436d/c5a059?text=Similia'">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl sm:text-2xl font-bold text-similia-darkBlue tracking-wide leading-none">סימיליה</span>
+                        <span class="text-xs text-similia-goldDark font-semibold mt-1">הומאופתיה קלאסית ותודעה גבוהה</span>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="#credo" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">האני מאמין</a>
+                    <a href="#founder" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">המייסדת והסגל</a>
+                    <a href="#ems-method" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">שיטת א.מ.ש</a>
+                    <a href="#programs" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">מסלולי לימוד</a>
+                    <a href="#consciousness-courses" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm text-similia-goldDark">קורסי תודעה גבוהה</a>
+                    <a href="#gallery" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">גלריה</a>
+                    <a href="#blog" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">בלוג ותבונה</a>
+                    <a href="#contact" class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">צור קשר</a>
+                    <a href="#portal-section" class="bg-similia-darkBlue text-white hover:bg-similia-gold hover:text-similia-darkBlue transition-all px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-md">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>פורטל תלמידים</span>
+                    </a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-similia-darkBlue hover:text-similia-gold focus:outline-none" aria-label="תפריט">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-similia-cream border-b border-similia-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#credo" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">האני מאמין</a>
+            <a href="#founder" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">המייסדת והסגל</a>
+            <a href="#ems-method" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">שיטת א.מ.ש</a>
+            <a href="#programs" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">מסלולי לימוד</a>
+            <a href="#consciousness-courses" onclick="toggleMobileMenu()" class="block text-similia-goldDark hover:text-similia-gold font-semibold text-base py-1">קורסי תודעה גבוהה</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">גלריית תמונות</a>
+            <a href="#blog" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">בלוג בית הספר</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">צור קשר</a>
+            <a href="#portal-section" onclick="toggleMobileMenu()" class="block bg-similia-darkBlue text-white text-center py-2.5 rounded-lg font-bold">
+                <i class="fa-solid fa-graduation-cap ml-2"></i>פורטל תלמידים
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative overflow-hidden pt-8 pb-16 md:py-24 bg-gradient-to-b from-similia-lightBlue/30 to-similia-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-similia-gold/10 border border-similia-gold/30 text-similia-goldDark font-semibold text-xs mx-auto lg:mx-0">
+                        <i class="fa-solid fa-infinity"></i>
+                        <span>שילוב של מדע תדרים, הומאופתיה וסודות הקבלה</span>
+                    </div>
+                    <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-similia-darkBlue font-bold leading-tight">
+                        סימיליה
+                        <span class="block text-xl sm:text-2xl md:text-3xl font-sans font-light text-similia-goldDark mt-3">
+                            בית ספר להומאופתיה קלאסית ותודעה גבוהה
+                        </span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-similia-charcoal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        מרחב אקדמי ורוחני ייחודי המשלב בין הומאופתיה קלאסית מעמיקה לבין חכמת הקבלה העתיקה, המותאמים בדיוק לאתגרי התקופה הנוכחית. אנו מכשירים מטפלים ומובילי דרך תודעתיים בשיטה שמשלבת גוף, נפש והגשמה מעשית בעולם.
+                    </p>
+                    <div class="flex items-center justify-center lg:justify-start gap-1 h-8 py-2">
+                        <span class="text-xs text-similia-goldDark font-semibold ml-2">תדר הריפוי:</span>
+                        <div class="w-1 h-4 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.1s"></div>
+                        <div class="w-1 h-6 bg-similia-midBlue rounded-full wave-bar" style="animation-delay: 0.3s"></div>
+                        <div class="w-1 h-3 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.5s"></div>
+                        <div class="w-1 h-7 bg-similia-darkBlue rounded-full wave-bar" style="animation-delay: 0.2s"></div>
+                        <div class="w-1 h-5 bg-similia-goldDark rounded-full wave-bar" style="animation-delay: 0.6s"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#consciousness-courses" class="px-8 py-3.5 bg-similia-gold text-similia-darkBlue hover:bg-similia-darkBlue hover:text-white font-bold rounded-lg shadow-lg transition-all text-center">
+                            חדש: קורסי תודעה גבוהה
+                        </a>
+                        <a href="#programs" class="px-8 py-3.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg shadow-lg transition-all text-center">
+                            מסלולי הלימוד השנתיים
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 w-full max-w-md mx-auto">
+                    <div class="bg-white rounded-2xl border border-similia-gold/30 shadow-xl p-6 sm:p-8 relative overflow-hidden">
+                        <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-l from-similia-gold via-similia-darkBlue to-similia-gold"></div>
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-user-lock text-3xl text-similia-gold mb-2"></i>
+                            <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">שער כניסה לתלמידים</h3>
+                            <p class="text-xs text-similia-charcoal/70 mt-1">מערכת למידה מתקדמת, קורסים דיגיטליים וחומרים אקדמיים</p>
+                        </div>
+                        <div id="auth-container">
+                            <form onsubmit="handleDemoLogin(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-similia-darkBlue mb-1">שם משתמש / דוא"ל</label>
+                                    <div class="relative">
+                                        <span class="absolute right-3 top-3 text-similia-goldDark/70"><i class="fa-regular fa-envelope"></i></span>
+                                        <input type="text" id="student-username" required placeholder="לדוגמה: student" class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-similia-darkBlue mb-1">סיסמה סודית</label>
+                                    <div class="relative">
+                                        <span class="absolute right-3 top-3 text-similia-goldDark/70"><i class="fa-solid fa-lock"></i></span>
+                                        <input type="password" id="student-password" required placeholder="לדוגמה: 1234" class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue">
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md">
+                                    התחברות לפורטל האישי
+                                </button>
+                            </form>
+                            <div class="mt-4 p-3 bg-similia-lightBlue/30 rounded-lg border border-similia-midBlue/10 text-center">
+                                <p class="text-[11px] text-similia-darkBlue">
+                                    <strong>כניסה מהירה לתצוגת סטודנט:</strong> השתמש ב-username: <code class="bg-white px-1 font-bold">student</code> וסיסמה <code class="bg-white px-1 font-bold">1234</code>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Credo (אני מאמין) -->
+    <section id="credo" class="py-20 bg-white border-y border-similia-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">אקדמיה של חיבורים</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
+                    האני מאמין של סימיליה
+                    <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
+                </h2>
+                <p class="text-sm sm:text-base text-similia-charcoal/80 mt-4 leading-relaxed">
+                    בבית הספר "סימיליה" אנו מאמינים כי הריפוי האמיתי אינו פשרה זמנית, אלא מסע מהותי של החזרת הסדר וההרמוניה לאורגניזם השלם.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="bg-similia-cream p-8 rounded-2xl border border-similia-gold/20 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-similia-darkBlue flex items-center justify-center text-similia-gold text-xl shadow">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">שילוב הומאופתיה קלאסית וידע קבלי עתיק</h3>
+                        <p class="text-sm text-similia-charcoal leading-relaxed">
+                            החיבור המכונן של בית הספר הוא המפגש בין מדע ההומאופתיה הקלאסית לבין חוקי השורש והמבנה הרוחני של היקום כפי שפורטו בחכמת הקבלה העתיקה. שילוב זה מותאם בדיוק רב לתקופה המורכבת בה אנו חיים.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-similia-cream p-8 rounded-2xl border border-similia-gold/20 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-similia-gold text-similia-darkBlue flex items-center justify-center text-xl shadow">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">ריפוי אמיתי - מעבר לגוף ונפש</h3>
+                        <p class="text-sm text-similia-charcoal leading-relaxed">
+                            אנו מבינים שהאדם אינו רק מכונה פיזיולוגית או רגשית. ריפוי אמיתי אינו מסתכם רק בטיפול בסימפטומים. מטרת העל היא להעניק לאדם הדרכה פרקטית ותפקודית בעולם.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder (מריאל טהר אלדמע) -->
+    <section id="founder" class="py-20 bg-gradient-to-b from-white to-similia-cream/30 border-b border-similia-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-similia-gold/20 max-w-sm w-full bg-white p-2">
+                        <img src="פרופיל.png" alt="מריאל טהר אלדמע" class="w-full h-auto rounded-xl object-cover" onerror="this.src='https://placehold.co/600x800/20436d/c5a059?text=Mariel+Tahar'">
+                        <div class="absolute bottom-6 inset-x-6 bg-similia-darkBlue/90 backdrop-blur-md p-4 rounded-xl border border-similia-gold/30 text-center">
+                            <span class="font-serif text-lg font-bold text-white block">מריאל טהר אלדמע</span>
+                            <span class="text-xs text-similia-gold font-semibold block mt-0.5">מייסדת ומנהלת בית הספר סימיליה</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6 text-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-similia-darkBlue/5 border border-similia-darkBlue/20 text-similia-darkBlue font-semibold text-xs">
+                        <i class="fa-solid fa-feather-pointed text-similia-gold"></i>
+                        <span>מייסדת, הומאופתית ומרצה לתודעה גבוהה</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold leading-tight">
+                        מריאל טהר אלדמע
+                    </h2>
+                    <p class="text-similia-charcoal leading-relaxed text-sm sm:text-base">
+                        נעים להכיר, אני מריאל טהר אלדמע. כהומאופתית קלאסית וכחוקרת של תהליכי תודעה עמוקים, זקיתי ללוות אנשים רבים במסעם האישי. מתוך תחושת שליחות עמוקה ואהבת אדם, הקמתי את 'סימיליה' במטרה להטיב עם הבריאה כולה ולהטיב עם האדם, על ידי שילוב של מדע התדרים ההומאופתי יחד עם חכמת הקבלה.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty (קרנית גולן) -->
+    <section id="faculty" class="py-20 bg-white border-b border-similia-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-similia-darkBlue/5 border border-similia-darkBlue/20 text-similia-darkBlue font-semibold text-xs">
+                        <i class="fa-solid fa-graduation-cap text-similia-gold"></i>
+                        <span>רכזת לימודים ומרצה בכירה</span>
+                    </div>
+                    <h3 class="font-serif text-3xl text-similia-darkBlue font-bold leading-tight">
+                        קרנית גולן
+                        <span class="block text-lg sm:text-xl font-sans font-light text-similia-goldDark mt-1">
+                            רכזת לימודי הומאופתיה קלאסית ומנהלת הסטאז' הקליני
+                        </span>
+                    </h3>
+                    <p class="text-similia-charcoal leading-relaxed text-sm sm:text-base">
+                        קרנית גולן היא מרצה ותיקה מזה כ-25 שנה בתחום ההומאופתיה הקלאסית בארץ. היא הכשירה מאות תלמידים אשר משתלבים כיום בהצלחה במערך העבודה ובקליניקות מובילות. בסימיליה, קרנית מלווה את הסטאז' הקליני ומכוונת את הסטודנטים צעד אחר צעד לעבודה מעשית עם מקרים חיים.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-similia-gold/20 max-w-sm w-full bg-white p-2">
+                        <img src="karnit_golan.jpg" alt="קרנית גולן" class="w-full h-auto rounded-xl object-cover min-h-[400px]" onerror="this.src='https://placehold.co/600x800/20436d/c5a059?text=%D7%A7%D7%A8%D7%A0%D7%99%D7%AA+%D7%92%D7%95%D7%9C%D7%9F'">
+                        <div class="absolute bottom-6 inset-x-6 bg-similia-darkBlue/90 backdrop-blur-md p-4 rounded-xl border border-similia-gold/30 text-center">
+                            <span class="font-serif text-lg font-bold text-white block">קרנית גולן</span>
+                            <span class="text-xs text-similia-gold font-semibold block mt-0.5">רכזת אקדמית ומנהלת הסטאז'</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E.M.S Method -->
+    <section id="ems-method" class="py-20 bg-similia-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">מודל הדגל הייחודי</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
+                    שיטת א.מ.ש: אמונה - משמעות - שייכות
+                    <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div onclick="selectEms('a')" id="ems-card-a" class="cursor-pointer bg-white p-8 rounded-2xl border-2 border-similia-gold/40 shadow-md transform hover:-translate-y-1 transition-all relative group">
+                    <div class="absolute top-4 left-4 text-similia-gold/20 font-serif text-6xl select-none">א</div>
+                    <div class="space-y-4 relative z-10">
+                        <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">אמונה</h3>
+                        <p class="text-sm text-similia-charcoal">הבסיס לכל תנועה בחיים. פיתוח הביטחון והאמון המלא בכוח הריפוי של הטבע ובכוחות הטמונים בנשמתנו.</p>
+                    </div>
+                </div>
+                <div onclick="selectEms('m')" id="ems-card-m" class="cursor-pointer bg-white p-8 rounded-2xl border border-similia-gold/20 shadow-sm transform hover:-translate-y-1 transition-all relative group">
+                    <div class="absolute top-4 left-4 text-similia-darkBlue/5 font-serif text-6xl select-none">מ</div>
+                    <div class="space-y-4 relative z-10">
+                        <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">משמעות</h3>
+                        <p class="text-sm text-similia-charcoal">מציאת המשמעות הגבוהה מאחורי המשברים והסימפטומים בחיינו. הפיכת הקושי לשיעור ולגילוי היעוד.</p>
+                    </div>
+                </div>
+                <div onclick="selectEms('s')" id="ems-card-s" class="cursor-pointer bg-white p-8 rounded-2xl border border-similia-gold/20 shadow-sm transform hover:-translate-y-1 transition-all relative group">
+                    <div class="absolute top-4 left-4 text-similia-gold/20 font-serif text-6xl select-none">ש</div>
+                    <div class="space-y-4 relative z-10">
+                        <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">שייכות</h3>
+                        <p class="text-sm text-similia-charcoal">תודעת השייכות מאפשרת לנו להתפתח יחד כקהילה, לשתף פעולה ולקבל כוח מהקבוצה.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 bg-white border border-similia-gold/20 rounded-2xl p-6 sm:p-8 shadow-inner max-w-4xl mx-auto">
+                <div id="ems-detail-content" class="transition-all duration-300">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="text-4xl sm:text-5xl font-serif text-similia-goldDark font-bold border-l-4 border-similia-gold pr-4">א'</div>
+                        <div class="space-y-3">
+                            <h4 class="font-serif text-xl sm:text-2xl font-bold text-similia-darkBlue">עוגן ה"אמונה" בשיטה שלנו: הכרת התבנית העליונה</h4>
+                            <p class="text-sm sm:text-base text-similia-charcoal leading-relaxed">חיבור עמוק לחוקיות הטבע והבריאה. אנו מלמדים כיצד תרופה הומאופתית מדוללת ומנוערת פועלת למעשה כתדר אמונה ותזכורת רוחנית לאורגניזם לשוב למצבו המושלם.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs (מסלולי לימוד) -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">אקדמיה מקצועית לעומק</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
+                    מסלולי הלימוד של סימיליה
+                    <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="bg-similia-darkBlue text-white p-6 relative">
+                            <span class="text-xs uppercase tracking-wider text-similia-gold font-bold block mb-1">תכנית ההכשרה המלאה</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold">לימודי הומאופתיה קלאסית</h3>
+                            <p class="text-xs text-similia-lightBlue/80 mt-1">מסלול תלת-שנתי מקיף להסמכת מטפלים</p>
+                        </div>
+                        <div class="p-6 sm:p-8 space-y-6">
+                            <p class="text-sm text-similia-charcoal leading-relaxed">שילוב מעמיק בין מדע ההומאופתיה לשיטת א.מ.ש לתודעה גבוהה, מלווה בסטאז' קליני מעשי מלא על מקרים חיים.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
+                        <span class="text-xs text-similia-charcoal/80">תעודת מטפל מוסמך בסיום 3 שנים</span>
+                        <a href="#contact" onclick="fillProgramInquiry('מסלול תלת שנתי הומאופתיה')" class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all">פרטים והרשמה</a>
+                    </div>
+                </div>
+                <div class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="bg-similia-gold text-similia-darkBlue p-6 relative">
+                            <span class="text-xs uppercase tracking-wider text-similia-darkBlue/70 font-bold block mb-1">התמחות וערוצי המשך</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold">סטאז' קליני ומסלולי העשרה</h3>
+                            <p class="text-xs text-similia-darkBlue/80 mt-1">למטפלים קיימים ולמעוניינים בהתפתחות אישית</p>
+                        </div>
+                        <div class="p-6 sm:p-8 space-y-6">
+                            <p class="text-sm text-similia-charcoal leading-relaxed">קורס סטאז' נפרד וממוקד להומאופתים בעלי הכשרה קודמת, המעוניינים בהדרכת עמיתים וניתוח מקרים מתקדם.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
+                        <span class="text-xs text-similia-charcoal/80">מתאים למטפלים פעילים</span>
+                        <a href="#contact" onclick="fillProgramInquiry('סטאז מטפלים וקורסי העשרה')" class="px-5 py-2 bg-similia-gold hover:bg-similia-darkBlue hover:text-white text-similia-darkBlue rounded-lg text-xs font-bold transition-all">פרטים והרשמה</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consciousness Courses -->
+    <section id="consciousness-courses" class="py-20 bg-gradient-to-b from-similia-cream to-similia-lightBlue/20 border-y border-similia-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">מרחב התפתחות ותבונה</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
+                    קורסים ייחודיים בתחום התודעה הגבוהה
+                    <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="bg-white border border-similia-gold/30 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-2xl transition-all relative">
+                    <div class="absolute top-4 left-4 bg-similia-gold text-similia-darkBlue text-[11px] font-bold px-3 py-1 rounded-full">קורס הדגל</div>
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-similia-gold/10 flex items-center justify-center text-similia-goldDark text-2xl"><i class="fa-solid fa-compass"></i></div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">תפקידו של האדם בעולם</h3>
+                                <p class="text-xs text-similia-goldDark font-semibold">סמינר עומק חווייתי • 8 מפגשים</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-similia-charcoal leading-relaxed">הרבה אנשים מחפשים להבין את הנשמה והמסע שלה, אבל מה לגבי תפקידו של האדם בתוך ממלכת הבריאה? קורס זה מציע מסע מרתק, מעמיק ומשנה חיים בצורה הפרקטית ביותר, המשלב מדע ותודעה גבוהה.</p>
+                    </div>
+                    <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
+                        <button onclick="fillProgramInquiry('קורס תפקידו של האדם בעולם')" class="px-5 py-2.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all shadow">הרשמה והבטחת מקום</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-similia-gold/30 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-2xl transition-all relative">
+                    <div class="absolute top-4 left-4 bg-similia-darkBlue text-white text-[11px] font-bold px-3 py-1 rounded-full">הכשרה מקצועית</div>
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-similia-darkBlue/10 flex items-center justify-center text-similia-darkBlue text-2xl"><i class="fa-solid fa-hourglass-half"></i></div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">קורס שחזורי גלגולים</h3>
+                                <p class="text-xs text-similia-goldDark font-semibold">הכשרת מטפלים • שילוב חכמת שער הגלגולים</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-similia-charcoal leading-relaxed">מעניק פרקטיקה טיפולית מלאה לביצוע שחזור גלגולים בקליניקה. הלימודים משלבים בצורה מעמיקה חומר עיוני מתוך ספר "שער הגלגולים" הכתוב בזוהר ומציעים הבנה חסרת תקדים של תהליכי נפש ותיקון.</p>
+                    </div>
+                    <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
+                        <button onclick="fillProgramInquiry('קורס שחזורי גלגולים')" class="px-5 py-2.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all shadow">הרשמה והבטחת מקום</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">מבט אל תוך סימיליה</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">גלריית הרגעים וההשראה<span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative" onclick="openLightbox('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80', 'מפגש סמינר עיוני ומעשי בסימיליה')">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="קמפוס סימיליה" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative" onclick="openLightbox('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80', 'צמחי מרפא וריפוי תדרי')">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="צמחי מרפא" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative" onclick="openLightbox('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80', 'לימוד והעמקה בספרי מקור וחכמת הנסתר')">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80" alt="ספרים ותבונה עתיקה" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-20 bg-similia-cream border-t border-similia-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">תבונה, חזון ומדע</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">בלוג בית הספר: דעות ומאמרים אקדמיים<span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl border border-similia-gold/20 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col justify-between p-6">
+                    <div>
+                        <span class="text-xs text-similia-goldDark font-bold uppercase">מחקר וחיבורים</span>
+                        <h3 class="font-serif text-xl font-bold text-similia-darkBlue mt-2 mb-3">הומאופתיה וקבלה: המדע שמאחורי חוק הדומים</h3>
+                        <p class="text-xs text-similia-charcoal/80 line-clamp-3">כיצד החוק הבסיסי ביותר בהומאופתיה מתחבר בצורה מדויקת לעקרונות 'אור חוזר' בספר הזוהר העתיק?</p>
+                    </div>
+                    <button onclick="openBlogArticle(1)" class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
+                </div>
+                <div class="bg-white rounded-2xl border border-similia-gold/20 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col justify-between p-6">
+                    <div>
+                        <span class="text-xs text-similia-goldDark font-bold uppercase">תודעה מעשית</span>
+                        <h3 class="font-serif text-xl font-bold text-similia-darkBlue mt-2 mb-3">תפקיד האדם בתיקון הבריאה וירידת הנשמה</h3>
+                        <p class="text-xs text-similia-charcoal/80 line-clamp-3">במקום לשאול מה היקום יכול לתת לנו, נשאל מהו תפקידו המרכזי של האדם בתוך ממלכת הבריאה.</p>
+                    </div>
+                    <button onclick="openBlogArticle(2)" class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
+                </div>
+                <div class="bg-white rounded-2xl border border-similia-gold/20 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col justify-between p-6">
+                    <div>
+                        <span class="text-xs text-similia-goldDark font-bold uppercase">שחזור ותודעה</span>
+                        <h3 class="font-serif text-xl font-bold text-similia-darkBlue mt-2 mb-3">סודות שער הגלגולים: פיוס עם העבר</h3>
+                        <p class="text-xs text-similia-charcoal/80 line-clamp-3">הבנת המקורות העיוניים של שחזור גלגולים בקבלה והשפעתם על שחרור פחדים ומכשולים בחיים המודרניים.</p>
+                    </div>
+                    <button onclick="openBlogArticle(3)" class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Portal Section -->
+    <section id="portal-section" class="py-20 bg-gradient-to-b from-similia-cream to-similia-lightBlue/30 border-t border-similia-gold/20 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="logged-out-portal" class="text-center max-w-2xl mx-auto space-y-6">
+                <div class="w-16 h-16 rounded-full bg-similia-darkBlue/10 flex items-center justify-center text-similia-darkBlue text-2xl mx-auto"><i class="fa-solid fa-lock"></i></div>
+                <h2 class="font-serif text-3xl font-bold text-similia-darkBlue">אזור תלמידים סגור</h2>
+                <p class="text-sm sm:text-base text-similia-charcoal/80">הגישה לתכני הווידאו, חומרי הלימוד וסיכומי המקרים מיועדת לתלמידי סימיליה הרשומים בלבד. אנא היכנס באמצעות טופס ההתחברות שבראש הדף.</p>
+                <div class="bg-white p-6 rounded-2xl border border-similia-gold/20 shadow-sm max-w-sm mx-auto">
+                    <button onclick="scrollToHeroAndFocus()" class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md"><i class="fa-solid fa-arrow-up mr-2"></i>לעבור לטופס ההתחברות</button>
+                </div>
+            </div>
+
+            <div id="logged-in-portal" class="hidden space-y-8 transition-all duration-500">
+                <div class="bg-white rounded-2xl border border-similia-gold/30 shadow-lg p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-similia-gold/10 pb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-similia-darkBlue flex items-center justify-center text-white text-xl font-bold border border-similia-gold"><i class="fa-solid fa-user-graduate"></i></div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">שלום, <span id="user-display-name">סטודנט אורח</span>!</h3>
+                                <p class="text-xs text-similia-goldDark font-semibold">פורטל סטודנטים פעיל • שנה ב׳</p>
+                            </div>
+                        </div>
+                        <button onclick="handleLogout()" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold rounded-lg transition-colors border border-red-200">התנתק</button>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+                        <div class="lg:col-span-8 space-y-6">
+                            <div class="bg-similia-cream rounded-xl p-4 sm:p-6 border border-similia-gold/10">
+                                <h4 class="font-serif text-lg font-bold text-similia-darkBlue mb-4">השיעור השבועי האחרון</h4>
+                                <div class="relative aspect-video w-full rounded-lg bg-similia-darkBlue overflow-hidden shadow-inner flex flex-col items-center justify-center text-center p-6 border border-similia-gold/20">
+                                    <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('לוגו%20%20סימיליה%20חדש_2.jpg')"></div>
+                                    <div class="relative z-10 space-y-4">
+                                        <button onclick="alertCustom('מדמה הפעלת שיעור וידאו מוקלט של כיתת תודעה גבוהה.')" class="w-16 h-16 rounded-full bg-similia-gold text-similia-darkBlue text-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-all"><i class="fa-solid fa-play mr-1"></i></button>
+                                        <h5 class="font-serif text-base text-white font-bold">חיבור שורש הרמדי ההומאופתי לתודעת הכלים והאורות בקבלה</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="bg-similia-cream rounded-xl p-6 border border-similia-gold/10">
+                                <h4 class="font-serif text-lg font-bold text-similia-darkBlue border-b border-similia-gold/10 pb-3 mb-4">הודעות מזכירות</h4>
+                                <div class="space-y-4">
+                                    <div class="border-r-2 border-similia-gold pr-3">
+                                        <span class="text-[10px] text-similia-goldDark font-semibold">מאי 2026</span>
+                                        <h5 class="text-xs font-bold text-similia-darkBlue">מפגש סמינר קליני מיוחד</h5>
+                                        <p class="text-xs text-similia-charcoal/80 mt-1">ביום חמישי הבא ניפגש לסטאז' פיזי פנים-אל-פנים במקרים חיים בקמפוס.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block">שיחת ייעוץ והתאמה</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold leading-tight">נשמח לשוחח, להכיר ולהתאים את מסלולך</h2>
+                    <p class="text-sm text-similia-charcoal leading-relaxed">לימודי הומאופתיה ותודעה גבוהה מתאימים לאנשים שמחפשים עומק, שרוצים להבין את חוקיות העולם, ושרוצים כלים אמיתיים ומקצועיים ביותר.</p>
+                </div>
+                <div class="lg:col-span-7 bg-similia-cream p-6 sm:p-10 rounded-2xl border border-similia-gold/20 shadow-md">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-similia-darkBlue mb-6">בקשת שיחת ייעוץ ללא התחייבות</h3>
+                    <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">שם מלא</label>
+                                <input type="text" id="contact-name" required placeholder="ישראל ישראלי" class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">מספר טלפון</label>
+                                <input type="tel" id="contact-phone" required placeholder="050-1234567" class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">דואר אלקטרוני</label>
+                                <input type="email" id="contact-email" required placeholder="israel@gmail.com" class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">מסלול המעניין אותך</label>
+                                <select id="contact-program" class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                                    <option value="כללי">מתלבט / ייעוץ כללי</option>
+                                    <option value="מסלול תלת שנתי הומאופתיה">מסלול תלת שנתי להומאופתיה קלאסית</option>
+                                    <option value="קורס תפקידו של האדם בעולם">תפקידו של האדם בעולם (8 מפגשים)</option>
+                                    <option value="קורס שחזורי גלגולים">קורס שחזורי גלגולים למטפלים</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-similia-darkBlue mb-1">הודעה אישית</label>
+                            <textarea id="contact-message" rows="4" placeholder="נשמח לשמוע על הרקע שלך..." class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none"></textarea>
+                        </div>
+                        <!-- Live Captcha from Backend -->
+                        <div id="captcha-wrapper" class="flex flex-col sm:flex-row gap-4 items-center bg-white p-4 rounded-xl border border-similia-gold/20">
+                            <span class="text-xs font-bold text-similia-darkBlue">אבטחה: <span id="captcha-question">טוען קפצ'ה...</span></span>
+                            <input type="number" id="captcha-answer" required placeholder="פתרון" class="w-24 px-3 py-1.5 border border-similia-gold/20 rounded-lg text-xs text-center focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md">שליחת בקשת ייעוץ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Modal system -->
+    <div id="custom-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 border border-similia-gold/30 shadow-2xl space-y-4">
+            <div class="flex items-center gap-3 text-similia-darkBlue border-b border-similia-gold/10 pb-3">
+                <i id="modal-icon" class="fa-solid fa-circle-info text-2xl text-similia-gold"></i>
+                <h4 id="modal-title" class="font-serif text-xl font-bold">הודעת מערכת</h4>
+            </div>
+            <p id="modal-message" class="text-sm text-similia-charcoal leading-relaxed whitespace-pre-line"></p>
+            <div class="text-left pt-2">
+                <button onclick="closeCustomModal()" class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white text-xs font-bold rounded-lg transition-all shadow">אישור והמשך</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4" onclick="closeLightbox()">
+        <div class="max-w-4xl w-full flex flex-col items-center space-y-4">
+            <img id="lightbox-img" src="" alt="תצוגה מוגדלת" class="max-h-[75vh] max-w-full rounded-lg object-contain border border-similia-gold/30">
+            <p id="lightbox-caption" class="text-sm text-similia-cream text-center font-semibold leading-relaxed max-w-2xl px-4"></p>
+        </div>
+    </div>
+
+    <!-- Blog Reading Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-[105] hidden items-center justify-center bg-black/60 p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full border border-similia-gold/30 shadow-2xl relative overflow-hidden">
+            <div class="bg-similia-darkBlue text-white px-6 py-4 flex items-center justify-between">
+                <span id="blog-modal-category" class="text-xs uppercase tracking-wider text-similia-gold font-bold">קטגוריה</span>
+                <button onclick="closeBlogModal()" class="text-white hover:text-similia-gold text-xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4 max-h-[70vh] overflow-y-auto">
+                <h3 id="blog-modal-title" class="font-serif text-2xl font-bold text-similia-darkBlue leading-snug">כותרת המאמר</h3>
+                <div id="blog-modal-body" class="text-sm sm:text-base text-similia-charcoal leading-relaxed space-y-4 whitespace-pre-line">תוכן המאמר...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-similia-darkBlue text-white border-t border-similia-gold/30 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-similia-lightBlue/10">
+                <div class="space-y-4">
+                    <span class="font-serif text-2xl font-bold text-similia-gold">סימיליה</span>
+                    <p class="text-xs text-similia-lightBlue/70 leading-relaxed">בית ספר גבוה המחבר מדע רוחני, קבלה עתיקה והומאופתיה קלאסית מעשית לחיי היומיום.</p>
+                </div>
+            </div>
+            <div class="pt-8 text-xs text-similia-lightBlue/50 text-center sm:text-right">
+                <p>© 2026 סימיליה - בית ספר להומאופתיה קלאסית ותודעה גבוהה. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API Configuration (Points locally by default; change to Render live URL after publishing)
+        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:3000'
+            : 'https://similia-backend.onrender.com'; // Change to actual hosted backend URL
+
+        let activeCaptchaId = '';
+
+        // Fetch Captcha challenge on load
+        async function fetchCaptcha() {
+            try {
+                const response = await fetch(\`\${API_BASE_URL}/api/captcha\`);
+                const data = await response.json();
+                activeCaptchaId = data.captchaId;
+                document.getElementById('captcha-question').innerText = data.question;
+            } catch (err) {
+                document.getElementById('captcha-question').innerText = '12 + 5 = ? (סימולציית שרת כבויה)';
+                activeCaptchaId = 'fallback';
+            }
+        }
+
+        window.addEventListener('load', fetchCaptcha);
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function alertCustom(message, title = "הודעת מערכת", icon = "fa-circle-info") {
+            const modal = document.getElementById('custom-modal');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            document.getElementById('modal-icon').className = \`fa-solid \${icon} text-2xl text-similia-gold\`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCustomModal() {
+            document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        function selectEms(letter) {
+            ['a', 'm', 's'].forEach(l => {
+                const el = document.getElementById(\`ems-card-\${l}\`);
+                el.className = "cursor-pointer bg-white p-8 rounded-2xl border border-similia-gold/20 shadow-sm transform hover:-translate-y-1 transition-all relative group";
+            });
+            document.getElementById(\`ems-card-\${letter}\`).className = "cursor-pointer bg-white p-8 rounded-2xl border-2 border-similia-gold/40 shadow-md transform hover:-translate-y-1 transition-all relative group";
+
+            const detailPanel = document.getElementById('ems-detail-content');
+            let content = '';
+            if(letter === 'a') content = "חיבור עמוק לחוקיות הטבע והבריאה. אנו מלמדים כיצד תרופה הומאופתית מדוללת ומנוערת פועלת למעשה כתדר אמונה ותזכורת רוחנית לאורגניזם.";
+            if(letter === 'm') content = "איננו נלחמים במחלה אלא מקשיבים לה. מחלה או קושי רגשי הם קריאה להתעוררות וגילוי ייעוד האורגניזם.";
+            if(letter === 's') content = "אף אדם אינו אי בודד. בסימיליה אנו מדגישים את ההתפתחות כחלק מקהילה חיה ותומכת.";
+
+            detailPanel.innerHTML = \`<div class="flex flex-col sm:flex-row gap-6 items-start">
+                <div class="text-4xl font-serif text-similia-goldDark font-bold border-l-4 border-similia-gold pr-4">\${letter.toUpperCase()}'</div>
+                <div class="space-y-3"><p class="text-sm sm:text-base text-similia-charcoal">\${content}</p></div>
+            </div>\`;
+        }
+
+        function fillProgramInquiry(program) {
+            document.getElementById('contact-program').value = program;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToHeroAndFocus() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => document.getElementById('student-username').focus(), 800);
+        }
+
+        async function handleDemoLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('student-username').value;
+            const password = document.getElementById('student-password').value;
+
+            // Handle demo local credentials directly
+            if (username === 'student' && password === '1234') {
+                showPortalDashboard("תלמיד אורח");
+                alertCustom("ברוך הבא לפורטל הסטודנטים! (חיבור סימולטיבי מקומי הצליח)", "התחברת בהצלחה!", "fa-circle-check");
+                return;
+            }
+
+            try {
+                const res = await fetch(\`\${API_BASE_URL}/api/login\`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await res.json();
+                alertCustom(data.message, "שגיאת התחברות", "fa-triangle-exclamation");
+            } catch {
+                alertCustom("שגיאת התחברות לשרת. כניסה מהירה אפשרית עם הנתונים: student / 1234.", "שגיאה", "fa-triangle-exclamation");
+            }
+        }
+
+        function showPortalDashboard(name) {
+            document.getElementById('logged-out-portal').classList.add('hidden');
+            document.getElementById('logged-in-portal').classList.remove('hidden');
+            document.getElementById('user-display-name').innerText = name;
+            setTimeout(() => document.getElementById('portal-section').scrollIntoView({ behavior: 'smooth' }), 400);
+        }
+
+        function handleLogout() {
+            document.getElementById('logged-in-portal').classList.add('hidden');
+            document.getElementById('logged-out-portal').classList.remove('hidden');
+            alertCustom("התנתקת בהצלחה מהמערכת.", "התנתקת", "fa-right-from-bracket");
+        }
+
+        async function handleInquirySubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            const email = document.getElementById('contact-email').value;
+            const program = document.getElementById('contact-program').value;
+            const message = document.getElementById('contact-message').value;
+            const captchaAnswer = document.getElementById('captcha-answer').value;
+
+            if (activeCaptchaId === 'fallback') {
+                if (parseInt(captchaAnswer) === 17) {
+                    alertCustom(\`תודה, \${name}! פנייתך התקבלה (סימולציית אופליין קפצ'ה).\`, "נשלח בהצלחה!");
+                } else {
+                    alertCustom("פתרון קפצ'ה שגוי.", "שגיאה", "fa-triangle-exclamation");
+                }
+                return;
+            }
+
+            try {
+                const res = await fetch(\`\${API_BASE_URL}/api/contact\`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, email, program, message, captchaId: activeCaptchaId, captchaAnswer })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    alertCustom(data.message, "פנייתך התקבלה!", "fa-circle-check");
+                    fetchCaptcha();
+                } else {
+                    alertCustom(data.message, "שגיאה", "fa-triangle-exclamation");
+                }
+            } catch {
+                alertCustom("לא ניתן ליצור קשר עם שרת הבק-אנד.", "שגיאה", "fa-triangle-exclamation");
+            }
+        }
+
+        function openLightbox(src, caption) {
+            const modal = document.getElementById('lightbox-modal');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').innerText = caption;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        const blogArticles = {
+            1: { category: "מחקר", title: "הומאופתיה וקבלה", body: "חוק הדומים בהומאופתיה מקביל לעיקרון 'אור חוזר' בספר הזוהר. שחרור חומר מגשמיותו משאיר תדר המשקף ומעיר את כוח החיים הפנימי." },
+            2: { category: "תודעה", title: "תפקיד האדם בתיקון", body: "האדם הוא מיקרוקוסמוס המכיל את כל העולמות. מטרתנו בבריאה אינה הגשמה פסיבית אלא הובלת תהליכים משפיעים מתוך מודעות גבוהה." },
+            3: { category: "שחזור", title: "סודות שער הגלגולים", body: "המקורות העיוניים של שחזור גלגולים בקבלה על פי האר"י מאפשרים להתיר פחדים עמוקים, קשרים כרוניים ומכשולים בחיים המודרניים." }
+        };
+
+        function openBlogArticle(id) {
+            const art = blogArticles[id];
+            document.getElementById('blog-modal-category').innerText = art.category;
+            document.getElementById('blog-modal-title').innerText = art.title;
+            document.getElementById('blog-modal-body').innerText = art.body;
+            document.getElementById('blog-modal').classList.remove('hidden');
+            document.getElementById('blog-modal').classList.add('flex');
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blog-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
