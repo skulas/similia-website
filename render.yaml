@@ -9,4 +9,4 @@ services:
       - key: NODE_ENV
         value: production
       - key: FRONTEND_URL
-        value: https://similia-website.netlify.app
+        value: https://similia.co.il
