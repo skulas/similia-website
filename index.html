@@ -24,7 +24,7 @@
                             midBlue: '#2b5c8f',
                             lightBlue: '#ebf1f7',
                             gold: '#c5a059',
-                            goldDark: '#9e7d3b',
+                            goldDark: '#7a5e24',
                             cream: '#fbfaf6',
                             charcoal: '#1d232a'
                         }
@@ -71,13 +71,35 @@
         .gallery-card:hover img {
             transform: scale(1.08);
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            .wave-bar { animation: none; }
+        }
+
+        .wave-bars-paused .wave-bar { animation-play-state: paused; }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            right: 0;
+            z-index: 9999;
+            padding: 0.5rem 1rem;
+            background: #20436d;
+            color: white;
+            font-weight: bold;
+            border-radius: 0 0 0.5rem 0.5rem;
+            text-decoration: none;
+        }
+        .skip-link:focus { top: 0; }
     </style>
 </head>
 
 <body class="font-sans antialiased">
 
+    <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
     <!-- Navigation -->
-    <nav
+    <nav aria-label="ניווט ראשי"
         class="sticky top-0 z-50 bg-similia-cream/95 backdrop-blur-md border-b border-similia-gold/20 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -94,80 +116,80 @@
                 </div>
                 <div class="hidden lg:flex items-center gap-6">
                     <a href="#credo"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">האני
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">האני
                         מאמין</a>
                     <a href="#founder"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">המייסדת
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">המייסדת
                         והסגל</a>
                     <a href="#ems-method"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">שיטת
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">שיטת
                         א.מ.ש</a>
                     <a href="#programs"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">מסלולי
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">מסלולי
                         לימוד</a>
                     <a href="#consciousness-courses"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm text-similia-goldDark">קורסי
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm text-similia-goldDark">קורסי
                         תודעה גבוהה</a>
                     <a href="#gallery"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">גלריה</a>
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">גלריה</a>
                     <a href="#blog"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">בלוג
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">בלוג
                         ותבונה</a>
                     <a href="#contact"
-                        class="text-similia-darkBlue hover:text-similia-gold transition-colors font-semibold text-sm">צור
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">צור
                         קשר</a>
                     <a href="#portal-section"
                         class="bg-similia-darkBlue text-white hover:bg-similia-gold hover:text-similia-darkBlue transition-all px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-md">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                         <span>פורטל תלמידים</span>
                     </a>
                 </div>
                 <button onclick="toggleMobileMenu()"
-                    class="lg:hidden text-similia-darkBlue hover:text-similia-gold focus:outline-none"
+                    class="lg:hidden text-similia-darkBlue hover:text-similia-goldDark focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-2 rounded"
                     aria-label="תפריט">
-                    <i class="fa-solid fa-bars text-2xl"></i>
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
         <div id="mobile-menu"
             class="hidden lg:hidden bg-similia-cream border-b border-similia-gold/20 px-4 pt-2 pb-6 space-y-3">
             <a href="#credo" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">האני מאמין</a>
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">האני מאמין</a>
             <a href="#founder" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">המייסדת
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">המייסדת
                 והסגל</a>
             <a href="#ems-method" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">שיטת א.מ.ש</a>
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">שיטת א.מ.ש</a>
             <a href="#programs" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">מסלולי
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">מסלולי
                 לימוד</a>
             <a href="#consciousness-courses" onclick="toggleMobileMenu()"
-                class="block text-similia-goldDark hover:text-similia-gold font-semibold text-base py-1">קורסי תודעה
+                class="block text-similia-goldDark hover:text-similia-goldDark font-semibold text-base py-1">קורסי תודעה
                 גבוהה</a>
             <a href="#gallery" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">גלריית
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">גלריית
                 תמונות</a>
             <a href="#blog" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">בלוג בית
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">בלוג בית
                 הספר</a>
             <a href="#contact" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-gold font-semibold text-base py-1">צור קשר</a>
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">צור קשר</a>
             <a href="#portal-section" onclick="toggleMobileMenu()"
                 class="block bg-similia-darkBlue text-white text-center py-2.5 rounded-lg font-bold">
-                <i class="fa-solid fa-graduation-cap ml-2"></i>פורטל תלמידים
+                <i class="fa-solid fa-graduation-cap ml-2" aria-hidden="true"></i>פורטל תלמידים
             </a>
         </div>
     </nav>
 
     <!-- Hero -->
-    <header
+    <header id="main-content"
         class="relative overflow-hidden pt-8 pb-16 md:py-24 bg-gradient-to-b from-similia-lightBlue/30 to-similia-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-similia-gold/10 border border-similia-gold/30 text-similia-goldDark font-semibold text-xs mx-auto lg:mx-0">
-                        <i class="fa-solid fa-infinity"></i>
+                        <i class="fa-solid fa-infinity" aria-hidden="true"></i>
                         <span>שילוב של מדע תדרים, הומאופתיה וסודות הקבלה</span>
                     </div>
                     <h1
@@ -185,14 +207,16 @@
                     </p>
                     <div class="flex items-center justify-center lg:justify-start gap-1 h-8 py-2">
                         <span class="text-xs text-similia-goldDark font-semibold ml-2">תדר הריפוי:</span>
-                        <div class="w-1 h-4 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.1s"></div>
-                        <div class="w-1 h-6 bg-similia-midBlue rounded-full wave-bar" style="animation-delay: 0.3s">
+                        <div id="wave-bars-wrapper" class="flex items-center gap-1" aria-hidden="true">
+                            <div class="w-1 h-4 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.1s"></div>
+                            <div class="w-1 h-6 bg-similia-midBlue rounded-full wave-bar" style="animation-delay: 0.3s"></div>
+                            <div class="w-1 h-3 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.5s"></div>
+                            <div class="w-1 h-7 bg-similia-darkBlue rounded-full wave-bar" style="animation-delay: 0.2s"></div>
+                            <div class="w-1 h-5 bg-similia-goldDark rounded-full wave-bar" style="animation-delay: 0.6s"></div>
                         </div>
-                        <div class="w-1 h-3 bg-similia-gold rounded-full wave-bar" style="animation-delay: 0.5s"></div>
-                        <div class="w-1 h-7 bg-similia-darkBlue rounded-full wave-bar" style="animation-delay: 0.2s">
-                        </div>
-                        <div class="w-1 h-5 bg-similia-goldDark rounded-full wave-bar" style="animation-delay: 0.6s">
-                        </div>
+                        <button onclick="toggleWavePause()" id="wave-pause-btn"
+                            class="mr-2 text-[10px] text-similia-goldDark border border-similia-gold/30 rounded px-1.5 py-0.5 hover:bg-similia-gold/10 focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1"
+                            aria-label="השהה אנימציה" aria-pressed="false">⏸</button>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                         <a href="#consciousness-courses"
@@ -213,7 +237,7 @@
                             class="absolute top-0 inset-x-0 h-2 bg-gradient-to-l from-similia-gold via-similia-darkBlue to-similia-gold">
                         </div>
                         <div class="text-center mb-6">
-                            <i class="fa-solid fa-user-lock text-3xl text-similia-gold mb-2"></i>
+                            <i class="fa-solid fa-user-lock text-3xl text-similia-gold mb-2" aria-hidden="true"></i>
                             <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">שער כניסה לתלמידים</h3>
                             <p class="text-xs text-similia-charcoal/70 mt-1">מערכת למידה מתקדמת, קורסים דיגיטליים
                                 וחומרים אקדמיים</p>
@@ -221,27 +245,27 @@
                         <div id="auth-container">
                             <form onsubmit="handleDemoLogin(event)" class="space-y-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-similia-darkBlue mb-1">שם משתמש /
+                                    <label for="student-username" class="block text-xs font-semibold text-similia-darkBlue mb-1">שם משתמש /
                                         דוא"ל</label>
                                     <div class="relative">
-                                        <span class="absolute right-3 top-3 text-similia-goldDark/70"><i
+                                        <span class="absolute right-3 top-3 text-similia-goldDark/70" aria-hidden="true"><i
                                                 class="fa-regular fa-envelope"></i></span>
                                         <input type="text" id="student-username" required placeholder="לדוגמה: student"
-                                            class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue">
+                                            class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-similia-darkBlue mb-1">סיסמה
+                                    <label for="student-password" class="block text-xs font-semibold text-similia-darkBlue mb-1">סיסמה
                                         סודית</label>
                                     <div class="relative">
-                                        <span class="absolute right-3 top-3 text-similia-goldDark/70"><i
+                                        <span class="absolute right-3 top-3 text-similia-goldDark/70" aria-hidden="true"><i
                                                 class="fa-solid fa-lock"></i></span>
                                         <input type="password" id="student-password" required placeholder="לדוגמה: 1234"
-                                            class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue">
+                                            class="w-full pl-3 pr-10 py-2.5 bg-similia-cream border border-similia-gold/20 rounded-lg text-sm focus:outline-none focus:border-similia-darkBlue focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                                     </div>
                                 </div>
                                 <button type="submit"
-                                    class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md">
+                                    class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md focus-visible:ring-2 focus-visible:ring-similia-gold focus-visible:ring-offset-2">
                                     התחברות לפורטל האישי
                                 </button>
                             </form>
@@ -590,21 +614,24 @@
                         class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span></h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80', 'מפגש סמינר עיוני ומעשי בסימיליה')">
+                <button type="button" class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl relative w-full text-right focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-2"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80', 'מפגש סמינר עיוני ומעשי בסימיליה')"
+                    aria-label="הצג תמונה: מפגש סמינר עיוני ומעשי בסימיליה">
                     <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
-                        alt="קמפוס סימיליה" class="w-full h-64 object-cover">
-                </div>
-                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80', 'צמחי מרפא וריפוי תדרי')">
+                        alt="" class="w-full h-64 object-cover">
+                </button>
+                <button type="button" class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl relative w-full text-right focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-2"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80', 'צמחי מרפא וריפוי תדרי')"
+                    aria-label="הצג תמונה: צמחי מרפא וריפוי תדרי">
                     <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80"
-                        alt="צמחי מרפא" class="w-full h-64 object-cover">
-                </div>
-                <div class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl cursor-pointer relative"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80', 'לימוד והעמקה בספרי מקור וחכמת הנסתר')">
+                        alt="" class="w-full h-64 object-cover">
+                </button>
+                <button type="button" class="gallery-card group overflow-hidden rounded-2xl border border-similia-gold/20 shadow-sm hover:shadow-xl relative w-full text-right focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-2"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80', 'לימוד והעמקה בספרי מקור וחכמת הנסתר')"
+                    aria-label="הצג תמונה: לימוד והעמקה בספרי מקור וחכמת הנסתר">
                     <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80"
-                        alt="ספרים ותבונה עתיקה" class="w-full h-64 object-cover">
-                </div>
+                        alt="" class="w-full h-64 object-cover">
+                </button>
             </div>
         </div>
     </section>
@@ -630,7 +657,7 @@
                             בצורה מדויקת לעקרונות 'אור חוזר' בספר הזוהר העתיק?</p>
                     </div>
                     <button onclick="openBlogArticle(1)"
-                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא
+                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-goldDark flex items-center gap-1"><span>קרא
                             את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
                 </div>
                 <div
@@ -643,7 +670,7 @@
                             מהו תפקידו המרכזי של האדם בתוך ממלכת הבריאה.</p>
                     </div>
                     <button onclick="openBlogArticle(2)"
-                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא
+                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-goldDark flex items-center gap-1"><span>קרא
                             את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
                 </div>
                 <div
@@ -656,7 +683,7 @@
                             בקבלה והשפעתם על שחרור פחדים ומכשולים בחיים המודרניים.</p>
                     </div>
                     <button onclick="openBlogArticle(3)"
-                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-gold flex items-center gap-1"><span>קרא
+                        class="text-xs text-similia-darkBlue font-bold mt-4 hover:text-similia-goldDark flex items-center gap-1"><span>קרא
                             את המאמר</span><i class="fa-solid fa-arrow-left text-[10px]"></i></button>
                 </div>
             </div>
@@ -752,7 +779,7 @@
                         לאנשים שמחפשים עומק, שרוצים להבין את חוקיות העולם, ושרוצים כלים אמיתיים ומקצועיים ביותר.</p>
                     <a href="https://wa.me/972524472017" target="_blank" rel="noopener noreferrer"
                         class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-5 py-3 rounded-xl transition-all shadow-md text-sm">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
                         <span>שלחו לנו וואטסאפ</span>
                     </a>
                 </div>
@@ -763,28 +790,28 @@
                     <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">שם מלא</label>
+                                <label for="contact-name" class="block text-xs font-semibold text-similia-darkBlue mb-1">שם מלא</label>
                                 <input type="text" id="contact-name" required placeholder="ישראל ישראלי"
-                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">מספר טלפון</label>
+                                <label for="contact-phone" class="block text-xs font-semibold text-similia-darkBlue mb-1">מספר טלפון</label>
                                 <input type="tel" id="contact-phone" required placeholder="050-1234567"
-                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">דואר
+                                <label for="contact-email" class="block text-xs font-semibold text-similia-darkBlue mb-1">דואר
                                     אלקטרוני</label>
                                 <input type="email" id="contact-email" required placeholder="israel@gmail.com"
-                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-similia-darkBlue mb-1">מסלול המעניין
+                                <label for="contact-program" class="block text-xs font-semibold text-similia-darkBlue mb-1">מסלול המעניין
                                     אותך</label>
                                 <select id="contact-program"
-                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none">
+                                    class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1">
                                     <option value="כללי">מתלבט / ייעוץ כללי</option>
                                     <option value="מסלול תלת שנתי הומאופתיה">מסלול תלת שנתי להומאופתיה קלאסית</option>
                                     <option value="קורס תפקידו של האדם בעולם">תפקידו של האדם בעולם (8 מפגשים)</option>
@@ -793,14 +820,14 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-similia-darkBlue mb-1">הודעה אישית</label>
+                            <label for="contact-message" class="block text-xs font-semibold text-similia-darkBlue mb-1">הודעה אישית</label>
                             <textarea id="contact-message" rows="4" placeholder="נשמח לשמוע על הרקע שלך..."
-                                class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none"></textarea>
+                                class="w-full px-4 py-2.5 bg-white border border-similia-gold/20 rounded-lg text-sm text-similia-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-similia-darkBlue focus-visible:ring-offset-1"></textarea>
                         </div>
                         <!-- Google reCAPTCHA v2 invisible -->
                         <div id="recaptcha-container"></div>
                         <button type="submit"
-                            class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md">שליחת
+                            class="w-full py-3 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg transition-all shadow-md focus-visible:ring-2 focus-visible:ring-similia-gold focus-visible:ring-offset-2">שליחת
                             בקשת ייעוץ</button>
                     </form>
                 </div>
@@ -825,10 +852,14 @@
     </div>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4"
-        onclick="closeLightbox()">
-        <div class="max-w-4xl w-full flex flex-col items-center space-y-4">
-            <img id="lightbox-img" src="" alt="תצוגה מוגדלת"
+    <div id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption"
+        class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4">
+        <button onclick="closeLightbox()" aria-label="סגור תמונה"
+            class="absolute top-4 left-4 text-white text-2xl bg-black/40 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="max-w-4xl w-full flex flex-col items-center space-y-4" onclick="closeLightbox()">
+            <img id="lightbox-img" src="" alt=""
                 class="max-h-[75vh] max-w-full rounded-lg object-contain border border-similia-gold/30">
             <p id="lightbox-caption"
                 class="text-sm text-similia-cream text-center font-semibold leading-relaxed max-w-2xl px-4"></p>
@@ -836,15 +867,15 @@
     </div>
 
     <!-- Blog Reading Modal -->
-    <div id="blog-modal" class="fixed inset-0 z-[105] hidden items-center justify-center bg-black/60 p-4">
+    <div id="blog-modal" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title" class="fixed inset-0 z-[105] hidden items-center justify-center bg-black/60 p-4">
         <div
             class="bg-white rounded-2xl max-w-2xl w-full border border-similia-gold/30 shadow-2xl relative overflow-hidden">
             <div class="bg-similia-darkBlue text-white px-6 py-4 flex items-center justify-between">
                 <span id="blog-modal-category"
                     class="text-xs uppercase tracking-wider text-similia-gold font-bold">קטגוריה</span>
-                <button onclick="closeBlogModal()"
-                    class="text-white hover:text-similia-gold text-xl focus:outline-none"><i
-                        class="fa-solid fa-xmark"></i></button>
+                <button onclick="closeBlogModal()" aria-label="סגור"
+                    class="text-white hover:text-similia-goldDark text-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 rounded"><i
+                        class="fa-solid fa-xmark" aria-hidden="true"></i></button>
             </div>
             <div class="p-6 sm:p-8 space-y-4 max-h-[70vh] overflow-y-auto">
                 <h3 id="blog-modal-title" class="font-serif text-2xl font-bold text-similia-darkBlue leading-snug">כותרת
@@ -866,11 +897,25 @@
                         עתיקה והומאופתיה קלאסית מעשית לחיי היומיום.</p>
                 </div>
             </div>
-            <div class="pt-8 text-xs text-similia-lightBlue/50 text-center sm:text-right">
+            <div class="pt-8 text-xs text-similia-lightBlue/50 text-center sm:text-right space-y-2">
                 <p>© 2026 סימיליה - בית ספר להומאופתיה קלאסית ותודעה גבוהה. כל הזכויות שמורות.</p>
+                <p>
+                    <a href="#accessibility-statement" class="underline hover:text-similia-gold transition-colors">הצהרת נגישות</a>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Accessibility Statement -->
+    <section id="accessibility-statement" class="bg-similia-charcoal text-white py-10 border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-sm leading-relaxed">
+            <h2 class="font-serif text-xl font-bold text-similia-gold">הצהרת נגישות</h2>
+            <p>בית הספר סימיליה פועל לאפשר לכלל הציבור, לרבות אנשים עם מוגבלות, לגשת לתכנים ולשירותים המוצעים באתר. האתר תואם לתקן ישראלי 5568 (WCAG 2.0 ברמה AA).</p>
+            <p>הנגשנו את האתר על בסיס עקרונות הנגישות: תפיסתיות, תפעוליות, הבנה ואמינות. כלל הטפסים נגישים, ניתן לנווט עם מקלדת בלבד, וניגודיות הצבעים עומדת בדרישות התקן.</p>
+            <p>נתקלתם בבעיית נגישות? פנו אלינו: <a href="https://wa.me/972524472017" class="underline hover:text-similia-gold">וואטסאפ</a> או <a href="#contact" class="underline hover:text-similia-gold">טופס יצירת קשר</a>.</p>
+            <p class="text-white/50 text-xs">עדכון אחרון: יוני 2026</p>
+        </div>
+    </section>
 
     <script>
         // API Configuration (Points locally by default; change to Render live URL after publishing)
@@ -883,6 +928,15 @@
         function pingBackend() { fetch(`${API_BASE_URL}/api/heartbeat`).catch(() => {}); }
         pingBackend();
         setInterval(pingBackend, 60000);
+
+        function toggleWavePause() {
+            const wrapper = document.getElementById('wave-bars-wrapper');
+            const btn = document.getElementById('wave-pause-btn');
+            const paused = wrapper.classList.toggle('wave-bars-paused');
+            btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+            btn.setAttribute('aria-label', paused ? 'הפעל אנימציה' : 'השהה אנימציה');
+            btn.textContent = paused ? '▶' : '⏸';
+        }
 
         function onRecaptchaLoad() {
             recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
