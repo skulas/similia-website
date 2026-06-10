@@ -74,6 +74,10 @@ function sendEmail({ to, subject, html }) {
     });
 }
 
+app.get('/api/heartbeat', (req, res) => {
+    res.json({ ok: true });
+});
+
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     console.log(`[LOGIN TIMELINE] Attempt made by: "${username}"`);

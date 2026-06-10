@@ -875,6 +875,10 @@
 
         let recaptchaWidgetId = null;
 
+        function pingBackend() { fetch(`${API_BASE_URL}/api/heartbeat`).catch(() => {}); }
+        pingBackend();
+        setInterval(pingBackend, 60000);
+
         function onRecaptchaLoad() {
             recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
                 sitekey: '6LdiDhctAAAAANEkYgIU9kSHUm8baLT79r3bhBEE',
