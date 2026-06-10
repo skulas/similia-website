@@ -883,33 +883,57 @@
             });
         }
 
+        async function submitToBackend(payload) {
+            const res = await fetch(`${API_BASE_URL}/api/contact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            return res.json();
+        }
+
         async function onRecaptchaVerified(token) {
             const name = document.getElementById('contact-name').value;
             const phone = document.getElementById('contact-phone').value;
             const email = document.getElementById('contact-email').value;
             const program = document.getElementById('contact-program').value;
             const message = document.getElementById('contact-message').value;
+            const submitBtn = document.querySelector('#contact button[type="submit"]');
+            const payload = { name, phone, email, program, message, recaptchaToken: token };
+
+            const onSuccess = (msg) => {
+                alertCustom(msg, "פנייתך התקבלה!", "fa-circle-check");
+                document.getElementById('contact-name').value = '';
+                document.getElementById('contact-phone').value = '';
+                document.getElementById('contact-email').value = '';
+                document.getElementById('contact-message').value = '';
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'שליחת בקשת ייעוץ';
+                grecaptcha.reset(recaptchaWidgetId);
+            };
+
+            const onError = (msg) => {
+                alertCustom(msg, "שגיאה", "fa-triangle-exclamation");
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'שליחת בקשת ייעוץ';
+                grecaptcha.reset(recaptchaWidgetId);
+            };
+
+            submitBtn.disabled = true;
 
             try {
-                const res = await fetch(`${API_BASE_URL}/api/contact`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, phone, email, program, message, recaptchaToken: token })
-                });
-                const data = await res.json();
-                if (data.success) {
-                    alertCustom(data.message, "פנייתך התקבלה!", "fa-circle-check");
-                    document.getElementById('contact-name').value = '';
-                    document.getElementById('contact-phone').value = '';
-                    document.getElementById('contact-email').value = '';
-                    document.getElementById('contact-message').value = '';
-                } else {
-                    alertCustom(data.message, "שגיאה", "fa-triangle-exclamation");
-                }
+                const data = await submitToBackend(payload);
+                if (data.success) { onSuccess(data.message); } else { onError(data.message); }
             } catch {
-                alertCustom("לא ניתן ליצור קשר עם שרת הבק-אנד.", "שגיאה", "fa-triangle-exclamation");
-            } finally {
-                grecaptcha.reset(recaptchaWidgetId);
+                submitBtn.innerText = 'השרת מתעורר... ננסה שוב בעוד 60 שניות';
+                setTimeout(async () => {
+                    try {
+                        const data = await submitToBackend(payload);
+                        if (data.success) { onSuccess(data.message); } else { onError(data.message); }
+                    } catch {
+                        onError("לא ניתן ליצור קשר עם השרת. אנא נסה שוב מאוחר יותר.");
+                    }
+                }, 60000);
             }
         }
 
