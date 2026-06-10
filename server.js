@@ -42,7 +42,8 @@ function verifyRecaptcha(token) {
 function sendEmail({ to, subject, html }) {
     return new Promise((resolve, reject) => {
         const body = JSON.stringify({
-            from: 'Similia <onboarding@resend.dev>',
+            from: 'Similia <info@similia.co.il>',
+            reply_to: RECIPIENT_EMAIL,
             to: [to],
             subject,
             html
