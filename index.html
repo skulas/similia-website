@@ -891,7 +891,7 @@
             const message = document.getElementById('contact-message').value;
 
             try {
-                const res = await fetch(\`\${API_BASE_URL}/api/contact\`, {
+                const res = await fetch(`${API_BASE_URL}/api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, phone, email, program, message, recaptchaToken: token })
@@ -922,7 +922,7 @@
             const modal = document.getElementById('custom-modal');
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-message').innerText = message;
-            document.getElementById('modal-icon').className = \`fa-solid \${icon} text-2xl text-similia-gold\`;
+            document.getElementById('modal-icon').className = `fa-solid ${icon} text-2xl text-similia-gold`;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
@@ -933,10 +933,10 @@
 
         function selectEms(letter) {
             ['a', 'm', 's'].forEach(l => {
-                const el = document.getElementById(\`ems-card-\${l}\`);
+                const el = document.getElementById(`ems-card-${l}`);
                 el.className = "cursor-pointer bg-white p-8 rounded-2xl border border-similia-gold/20 shadow-sm transform hover:-translate-y-1 transition-all relative group";
             });
-            document.getElementById(\`ems-card-\${letter}\`).className = "cursor-pointer bg-white p-8 rounded-2xl border-2 border-similia-gold/40 shadow-md transform hover:-translate-y-1 transition-all relative group";
+            document.getElementById(`ems-card-${letter}`).className = "cursor-pointer bg-white p-8 rounded-2xl border-2 border-similia-gold/40 shadow-md transform hover:-translate-y-1 transition-all relative group";
 
             const detailPanel = document.getElementById('ems-detail-content');
             let content = '';
@@ -944,10 +944,10 @@
             if(letter === 'm') content = "איננו נלחמים במחלה אלא מקשיבים לה. מחלה או קושי רגשי הם קריאה להתעוררות וגילוי ייעוד האורגניזם.";
             if(letter === 's') content = "אף אדם אינו אי בודד. בסימיליה אנו מדגישים את ההתפתחות כחלק מקהילה חיה ותומכת.";
 
-            detailPanel.innerHTML = \`<div class="flex flex-col sm:flex-row gap-6 items-start">
-                <div class="text-4xl font-serif text-similia-goldDark font-bold border-l-4 border-similia-gold pr-4">\${letter.toUpperCase()}'</div>
-                <div class="space-y-3"><p class="text-sm sm:text-base text-similia-charcoal">\${content}</p></div>
-            </div>\`;
+            detailPanel.innerHTML = `<div class="flex flex-col sm:flex-row gap-6 items-start">
+                <div class="text-4xl font-serif text-similia-goldDark font-bold border-l-4 border-similia-gold pr-4">${letter.toUpperCase()}'</div>
+                <div class="space-y-3"><p class="text-sm sm:text-base text-similia-charcoal">${content}</p></div>
+            </div>`;
         }
 
         function fillProgramInquiry(program) {
@@ -973,7 +973,7 @@
             }
 
             try {
-                const res = await fetch(\`\${API_BASE_URL}/api/login\`, {
+                const res = await fetch(`${API_BASE_URL}/api/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })

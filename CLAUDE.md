@@ -33,8 +33,9 @@
 - `SMTP_HOST` = `smtp.gmail.com` (optional, default)
 - `SMTP_PORT` = `587` (optional, default)
 
-## Status (2026-05-31)
+## Status (2026-06-10)
 
 - Site is live and fully connected at https://similia.co.il
 - SSL active
 - Backend FRONTEND_URL updated to production domain in both render.yaml and Render dashboard
+- Netlify linked to GitHub repo `skulas/similia-website`, branch `main` — auto-deploys on push
