@@ -10,3 +10,11 @@ services:
         value: production
       - key: FRONTEND_URL
         value: https://similia.co.il
+      - key: RECAPTCHA_SECRET_KEY
+        sync: false
+      - key: RECIPIENT_EMAIL
+        value: gargerim@gmail.com
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false

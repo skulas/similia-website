@@ -26,6 +26,12 @@
 ### Render (backend)
 - `NODE_ENV` = `production`
 - `FRONTEND_URL` = `https://similia.co.il`
+- `RECAPTCHA_SECRET_KEY` = Google reCAPTCHA v2 secret key (from console.cloud.google.com/security/recaptcha)
+- `RECIPIENT_EMAIL` = `gargerim@gmail.com` (contact form destination)
+- `SMTP_USER` = Gmail address used to send emails
+- `SMTP_PASS` = Gmail app password (generated at myaccount.google.com/apppasswords)
+- `SMTP_HOST` = `smtp.gmail.com` (optional, default)
+- `SMTP_PORT` = `587` (optional, default)
 
 ## Status (2026-05-31)
 
