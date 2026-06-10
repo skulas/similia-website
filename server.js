@@ -1,11 +1,7 @@
-const dns = require('dns');
-dns.setDefaultResultOrder('ipv4first');
-
 const express = require('express');
 const cors = require('cors');
 const https = require('https');
 const querystring = require('querystring');
-const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,19 +12,7 @@ app.use(express.json());
 
 const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET_KEY;
 const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL || 'gargerim@gmail.com';
-
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '465'),
-    secure: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) === 465 : true,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-    },
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 10000
-});
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 function verifyRecaptcha(token) {
     return new Promise((resolve) => {
@@ -51,6 +35,40 @@ function verifyRecaptcha(token) {
         });
         req.on('error', () => resolve({ success: false }));
         req.write(params);
+        req.end();
+    });
+}
+
+function sendEmail({ to, subject, html }) {
+    return new Promise((resolve, reject) => {
+        const body = JSON.stringify({
+            from: 'Similia <onboarding@resend.dev>',
+            to: [to],
+            subject,
+            html
+        });
+        const req = https.request({
+            hostname: 'api.resend.com',
+            path: '/emails',
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${RESEND_API_KEY}`,
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(body)
+            }
+        }, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                if (res.statusCode >= 200 && res.statusCode < 300) {
+                    resolve(JSON.parse(data));
+                } else {
+                    reject(new Error(`Resend API error ${res.statusCode}: ${data}`));
+                }
+            });
+        });
+        req.on('error', reject);
+        req.write(body);
         req.end();
     });
 }
@@ -92,8 +110,7 @@ app.post('/api/contact', async (req, res) => {
     `;
 
     try {
-        await transporter.sendMail({
-            from: `"אתר סימיליה" <${process.env.SMTP_USER}>`,
+        await sendEmail({
             to: RECIPIENT_EMAIL,
             subject: `פנייה חדשה: ${name} — ${program}`,
             html: emailBody
