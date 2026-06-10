@@ -13,7 +13,7 @@
 |-------|----------|----------|-----------|
 | Frontend | Netlify | https://similia.co.il | https://app.netlify.com |
 | Frontend (fallback) | Netlify | https://similia-website.netlify.app | — |
-| Backend | Render | — | https://dashboard.render.com |
+| Backend | Render | https://similia-website.onrender.com | https://dashboard.render.com |
 
 ## Domain
 
