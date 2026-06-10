@@ -15,11 +15,25 @@
 | Frontend (fallback) | Netlify | https://similia-website.netlify.app | — |
 | Backend | Render | https://similia-website.onrender.com | https://dashboard.render.com |
 
+## Service Providers
+
+| Service | Provider | Dashboard |
+|---------|----------|-----------|
+| Domain registrar | box.co.il | https://box.co.il |
+| DNS | box.co.il | https://box.co.il |
+| Frontend hosting | Netlify | https://app.netlify.com |
+| Backend hosting | Render | https://dashboard.render.com |
+| Email delivery | Resend | https://resend.com |
+| CAPTCHA | Google reCAPTCHA v2 | https://www.google.com/recaptcha/admin |
+| SSL certificate | Netlify (Let's Encrypt) | — |
+| Source code | GitHub | https://github.com/skulas/similia-website |
+
 ## Domain
 
 - Domain: `similia.co.il` — registered at box.co.il
 - DNS managed at box.co.il, pointing to Netlify
 - SSL certificate provisioned via Netlify (Let's Encrypt)
+- `similia.co.il` verified in Resend for sending email from `info@similia.co.il`
 
 ## Deployment
 
