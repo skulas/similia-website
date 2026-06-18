@@ -1,5 +1,9 @@
 # Similia Website
 
+## Working Rules
+
+- **Never commit or push without explicit user approval.** Always show what changed and wait for the user to say "push" or "commit" before running any `git commit` or `git push` command.
+
 ## Project Structure
 
 - `index.html` — static frontend (single page)

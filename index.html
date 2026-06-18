@@ -941,17 +941,10 @@
         </div>
     </section>
 
+    <script src="/js/form-utils.js"></script>
     <script>
         // API Configuration (Points locally by default; change to Render live URL after publishing)
-        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? 'http://localhost:3000'
-            : 'https://similia-website.onrender.com';
-
         let recaptchaWidgetId = null;
-
-        function pingBackend() { fetch(`${API_BASE_URL}/api/heartbeat`).catch(() => {}); }
-        pingBackend();
-        setInterval(pingBackend, 60000);
 
         function toggleWavePause() {
             const wrapper = document.getElementById('wave-bars-wrapper');
@@ -968,15 +961,6 @@
                 size: 'invisible',
                 callback: onRecaptchaVerified
             });
-        }
-
-        async function submitToBackend(payload) {
-            const res = await fetch(`${API_BASE_URL}/api/contact`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            return res.json();
         }
 
         async function onRecaptchaVerified(token) {

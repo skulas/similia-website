@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600;700;800&family=Secular+One&display=swap" rel="stylesheet">
     
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -122,7 +123,7 @@
             <div class="flex justify-center">
                 <!-- לוגו בית הספר סימליה -->
                 <div class="w-36 h-32 bg-white rounded-full shadow-2xl border-4 border-brand-gold flex items-center justify-center p-2 mb-4 transform hover:scale-105 transition duration-300">
-                    <img src="לוגו עגול_2.jpeg" alt="לוגו סימליה" class="w-full h-full object-contain">
+                    <img src="logo-round.jpeg" alt="לוגו סימליה" class="w-full h-full object-contain">
                 </div>
             </div>
             
@@ -244,7 +245,7 @@
             <div class="bg-brand-dark/85 backdrop-blur-md p-8 rounded-3xl border-2 border-brand-blue shadow-lg text-center flex flex-col justify-between">
                 <div>
                     <!-- לוגו סימליה -->
-                    <img src="לוגו עגול_2.jpeg" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-gold mb-6 object-contain p-1">
+                    <img src="logo-round.jpeg" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-gold mb-6 object-contain p-1">
                     <h3 class="text-3xl font-black mb-4 text-brand-gold">בית הספר סימליה</h3>
                     <p class="text-gray-200">בית ספר לתודעה גבוהה המשלב חקירה תודעתית מעמיקה יחד עם שאיפה חסרת פשרות לתוצאות ויישום מעשי יומיומי.</p>
                 </div>
@@ -252,7 +253,7 @@
             <div class="bg-brand-dark/85 backdrop-blur-md p-8 rounded-3xl border-2 border-brand-gold shadow-lg text-center flex flex-col justify-between">
                 <div>
                     <!-- תמונת המרצה מריאל -->
-                    <img src="תמונת לוגו עגולה.jpeg" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-blue mb-6 object-cover">
+                    <img src="instructor-photo.jpeg" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-blue mb-6 object-cover">
                     <h3 class="text-2xl text-brand-gold font-black mb-2">מנחת הקורס</h3>
                     <h3 class="text-3xl font-black mb-4 text-brand-gold">מריאל טהר אלדמע</h3>
                     <p class="text-gray-200">מורה ומנחה לחקירה תודעתית, הידועה ביכולתה לתרגם מושגים מופשטים לכלים מעשיים וחיוניים לחיים עצמם.</p>
@@ -331,7 +332,7 @@
 
             <form id="lead_submission_form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                 <input type="text" id="form_name" placeholder="שם מלא" required class="w-full p-4 rounded-xl border-2 border-brand-gold/50 bg-[#070B16]/70 text-white placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20">
-                <input type="tel" id="form_phone" placeholder="טלפון נייד" required class="w-full p-4 rounded-xl border-2 border-brand-gold/50 bg-[#070B16]/70 text-white placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20">
+                <input type="tel" id="form_phone" placeholder="טלפון נייד" required class="w-full p-4 rounded-xl border-2 border-brand-gold/50 bg-[#070B16]/70 text-white placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 text-right">
                 <div class="flex gap-6 font-bold text-base justify-center text-gray-200">
                     <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="track" checked class="accent-brand-blue h-5 w-5"> מסלול בוקר</label>
                     <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="track" class="accent-brand-blue h-5 w-5"> מסלול ערב</label>
@@ -344,11 +345,16 @@
                         אני מאשר/ת קבלת עדכונים, תכנים בעלי ערך, הצעות שיווקיות ודיוור פרסומי מבית הספר "סימליה" באמצעות SMS, דוא"ל, וואטסאפ או אמצעי תקשורת אחרים. ידוע לי כי אוכל להסיר את עצמי מרשימת התפוצה בכל עת ובקלות.
                     </label>
                 </div>
+
+                <button id="adam-submit" type="submit"
+                    class="w-full bg-brand-gold text-brand-dark font-black text-xl py-4 rounded-xl hover:brightness-110 transition duration-300 shadow-xl mt-2">
+                    שליחה
+                </button>
             </form>
             
             <div class="mt-12 text-center border-t border-white/10 pt-8">
                 <p class="text-gray-300 mb-4 text-xl font-black">רוצים תשובה מיידית?</p>
-                <a href="https://wa.me/972500000000?text=היי,%20אשמח%20לשריין%20את%20מחיר%20ההרשמה%20המוקדמת%20לקורס%20תפקידו%20של%20האדם%20בעולם" target="_blank" class="dynamic-btn inline-block bg-[#25d366] text-white font-black py-5 px-10 rounded-xl text-xl hover:bg-green-600 btn-press shadow-md">סגירת פרטים מהירה בוואטסאפ</a>
+                <a href="https://wa.me/972524472017?text=היי,%20אשמח%20לשריין%20את%20מחיר%20ההרשמה%20המוקדמת%20לקורס%20תפקידו%20של%20האדם%20בעולם" target="_blank" class="dynamic-btn inline-block bg-[#25d366] text-white font-black py-5 px-10 rounded-xl text-xl hover:bg-green-600 btn-press shadow-md">סגירת פרטים מהירה בוואטסאפ</a>
             </div>
         </footer>
     </main>
@@ -371,19 +377,69 @@
         </div>
     </footer>
 
-    <!-- לוגיקת רישום והמרות ללא alerts -->
+    <script src="../js/form-utils.js"></script>
     <script>
+        let recaptchaWidgetId = null;
+
+        function onRecaptchaLoad() {
+            recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
+                sitekey: '6LdiDhctAAAAANEkYgIU9kSHUm8baLT79r3bhBEE',
+                size: 'invisible',
+                callback: onRecaptchaVerified
+            });
+        }
+
+        async function onRecaptchaVerified(token) {
+            const name = document.getElementById('form_name').value;
+            const phone = document.getElementById('form_phone').value;
+            const submitBtn = document.getElementById('adam-submit');
+            const payload = { name, phone, email: '', program: 'קורס תפקידו של האדם בעולם', message: '', recaptchaToken: token };
+
+            const onSuccess = () => {
+                document.getElementById('lead_submission_form').classList.add('hidden');
+                const successBox = document.getElementById('success_box');
+                successBox.classList.remove('hidden');
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'שליחה';
+                grecaptcha.reset(recaptchaWidgetId);
+            };
+
+            const onError = (msg) => {
+                alert(msg);
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'שליחה';
+                grecaptcha.reset(recaptchaWidgetId);
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'שולח...';
+
+            try {
+                const data = await submitToBackend(payload);
+                if (data.success) { onSuccess(); } else { onError(data.message); }
+            } catch {
+                submitBtn.innerText = 'השרת מתעורר... ננסה שוב בעוד 60 שניות';
+                setTimeout(async () => {
+                    try {
+                        const data = await submitToBackend(payload);
+                        if (data.success) { onSuccess(); } else { onError(data.message); }
+                    } catch {
+                        onError('לא ניתן ליצור קשר עם השרת. אנא נסה שוב מאוחר יותר.');
+                    }
+                }, 60000);
+            }
+        }
+
         function handleFormSubmit(event) {
             event.preventDefault();
-            
-            // הסתרת שדות הטופס
-            document.getElementById('lead_submission_form').classList.add('hidden');
-            
-            // הצגת הודעת ההצלחה
-            const successBox = document.getElementById('success_box');
-            successBox.classList.remove('hidden');
-            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (recaptchaWidgetId === null) {
+                alert('אנא המתן לטעינת הדף ונסה שוב.');
+                return;
+            }
+            grecaptcha.execute(recaptchaWidgetId);
         }
     </script>
+    <div id="recaptcha-container"></div>
 </body>
 </html>
