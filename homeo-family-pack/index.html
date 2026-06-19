@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/homeo-family-pack/">
+    <title>הבית המאוזן - סימיליה</title>
+    <style>
+        /* אתחול ועיצוב כללי בהשראת נייר צבעי מים */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --olive-green: #5D7A68;     /* ירוק הזית הבוטני מהאיור */
+            --dark-charcoal: #2A3630;   /* צבע הכתב הכהה והקריא */
+            --berry-accent: #C46851;    /* גוון החמרה/גרגירים המדויק לכפתורי הנעה לפעולה */
+            --soft-cream: #FDFBF7;      /* גוון השמנת הבהיר והנקי של הרקע */
+            --leaf-muted: #8FA495;      /* ירוק בהיר לעיטורים משניים */
+        }
+
+        body {
+            background-color: var(--soft-cream);
+            color: var(--dark-charcoal);
+            line-height: 1.8;
+            font-size: 19px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* כותרות בסגנון מעוגל ואורגני */
+        h1, h2, h3, h4 {
+            color: var(--dark-charcoal);
+            font-weight: 700;
+        }
+
+        /* עיצוב אזור ה-Hero הממורכז */
+        .hero-centered-section {
+            padding: 60px 0 80px 0;
+            background-color: var(--soft-cream);
+        }
+
+        .hero-main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* מסגרת עגולה מושלמת לתמונת הפתיחה */
+        .hero-image-circle-wrapper {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(93, 122, 104, 0.15);
+            border: 4px solid #FFF;
+            margin-bottom: 40px;
+            background-color: #FFF;
+        }
+
+        .hero-centered-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center; 
+        }
+
+        /* בלוק הטקסט שיושב מתחת לתמונה */
+        .hero-content-below {
+            text-align: center;
+            width: 100%;
+        }
+
+        .brand-tagline {
+            font-size: 1.2rem;
+            color: var(--olive-green);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .main-page-title {
+            font-size: 4rem;
+            color: rgb(115, 145, 95);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .main-page-subtitle {
+            font-size: 2rem;
+            color: var(--berry-accent);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: #4D5A52;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* לחצן הנעה לפעולה */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--berry-accent);
+            color: #FFF;
+            padding: 16px 48px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(196, 104, 81, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #A9543E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 104, 81, 0.5);
+        }
+
+        /* בלוק החיבור הרגשי */
+        .emotional-section {
+            background: rgba(244, 241, 233, 0.6);
+        }
+
+        .emotional-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .illustration-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .main-watercolor-img {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(93, 122, 104, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .emotional-text {
+            flex: 1.2;
+            text-align: right;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .subtitle {
+            font-size: 1.35rem;
+            color: #4D5A52;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* מנחה - מריאל טהר אלדמע */
+        .instructor-badge {
+            margin-top: 50px;
+            padding: 30px;
+            background: #FFF;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            text-align: right;
+            max-width: 750px;
+            border: 1px solid rgba(93, 122, 104, 0.12);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.01);
+        }
+
+        .instructor-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin-left: 20px;
+            object-fit: cover;
+            border: 2px solid var(--olive-green);
+        }
+
+        /* מבנה 3 הטורים העגולים - תכולת הערכה */
+        .grid-3-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .circle-style-card {
+            background: #FFF;
+            padding: 40px 30px;
+            border-radius: 32px;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.01);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .circle-style-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .watercolor-circle {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--leaf-muted);
+            background-color: var(--soft-cream);
+        }
+
+        .watercolor-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .metric-badge {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background-color: #F3F6F4;
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 50px;
+            color: var(--olive-green);
+        }
+
+        /* מבנה אזור הקורס המשולב עם תמונת המחשב */
+        .course-explanation-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .course-text-side {
+            flex: 1.2;
+        }
+
+        .course-image-side {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .course-round-img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 12px 30px rgba(93, 122, 104, 0.12);
+            border: 3px solid #FFF;
+        }
+
+        /* בלוקים מורחבים לייעודיים בסילבוס */
+        .syllabus-highlight-block {
+            display: flex;
+            align-items: center;
+            background: #FFF;
+            padding: 35px;
+            border-radius: 28px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(93, 122, 104, 0.08);
+            box-shadow: 0 10px 25px rgba(93, 122, 104, 0.03);
+            gap: 40px;
+        }
+
+        .syllabus-block-text {
+            flex: 1.3;
+            text-align: right;
+        }
+
+        .syllabus-block-image-wrapper {
+            flex: 0.7;
+            text-align: center;
+        }
+
+        .syllabus-round-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid var(--soft-cream);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .syllabus-block-text ul {
+            list-style: none;
+        }
+
+        .syllabus-block-text ul li {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: #445048;
+        }
+
+        .syllabus-block-text ul li::before {
+            content: "• ";
+            color: var(--olive-green);
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        /* מדור עדויות והמלצות */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 45px;
+        }
+
+        .testimonial-card {
+            background: #FFF;
+            padding: 35px 30px;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(93, 122, 104, 0.03);
+            border: 1px solid rgba(93, 122, 104, 0.06);
+            text-align: right;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #4A554E;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-quote::before {
+            content: "“";
+            font-size: 3rem;
+            color: rgba(196, 104, 81, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-charcoal);
+            border-top: 1px solid #F0F4F1;
+            padding-top: 15px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* מסלולי רכישה וערכות */
+        .packages-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 900px;
+            margin: 50px auto 0;
+            justify-content: center;
+        }
+
+        .package-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(93, 122, 104, 0.15);
+            border-radius: 32px;
+            padding: 45px 35px;
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .package-item.featured {
+            border: 2px solid var(--olive-green);
+            background: #FFF;
+            box-shadow: 0 20px 45px rgba(93, 122, 104, 0.1);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--olive-green);
+            color: #FFF;
+            padding: 4px 24px;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .package-image-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #FFF;
+            box-shadow: 0 6px 15px rgba(93, 122, 104, 0.1);
+            margin-bottom: 20px;
+            background-color: #FFF;
+        }
+
+        .package-image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: right;
+            margin: 25px 0;
+            width: 100%;
+        }
+
+        .features-list li {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--berry-accent);
+            border-radius: 50%;
+            margin-left: 12px;
+            flex-shrink: 0;
+        }
+
+        /* קהל יעד ושאלות נפוצות */
+        .target-list {
+            max-width: 850px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .target-list li {
+            background: #FFF;
+            padding: 22px 30px;
+            margin-bottom: 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(93, 122, 104, 0.1);
+        }
+
+        .target-list li::before {
+            content: "🌿";
+            margin-left: 15px;
+            font-size: 1.1rem;
+        }
+
+        .faq-box {
+            max-width: 850px;
+            margin: 0 auto 24px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 24px;
+            border-bottom: 2px solid rgba(93, 122, 104, 0.15);
+        }
+
+        .faq-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--dark-charcoal);
+        }
+
+        /* עיצוב טופס יצירת קשר */
+        .contact-form-section {
+            background: #FFF;
+            border-top: 1px solid rgba(93, 122, 104, 0.1);
+            border-bottom: 1px solid rgba(93, 122, 104, 0.1);
+        }
+
+        .contact-form-card {
+            background: var(--soft-cream);
+            border: 1px solid rgba(93, 122, 104, 0.15);
+            padding: 40px 30px;
+            border-radius: 32px;
+            box-shadow: 0 15px 40px rgba(93, 122, 104, 0.03);
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(93, 122, 104, 0.25);
+            background: #FFF;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--olive-green);
+            box-shadow: 0 0 0 3px rgba(93, 122, 104, 0.1);
+        }
+
+        /* כפתור וואטסאפ צף מודרני */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            background-color: #20ba5a;
+        }
+
+        /* רספונסיביות מלאה למובייל ומסכים קטנים */
+        @media (max-width: 768px) {
+            .hero-image-circle-wrapper {
+                width: 240px;
+                height: 240px;
+                margin-bottom: 25px;
+            }
+            .main-page-title { font-size: 2.8rem; }
+            .main-page-subtitle { font-size: 1.6rem; }
+            .hero-description { font-size: 1.15rem; padding: 0 10px; }
+            h2 { font-size: 1.8rem; }
+            .emotional-wrapper, .course-explanation-wrapper, .syllabus-highlight-block { flex-direction: column; text-align: center; gap: 30px; }
+            .emotional-text, .course-text-side, .syllabus-block-text { text-align: center; }
+            .instructor-badge { flex-direction: column; text-align: center; }
+            .instructor-avatar { margin-left: 0; margin-bottom: 15px; }
+            .course-round-img, .syllabus-round-img { max-width: 250px; }
+            .cta-button { width: 100%; text-align: center; }
+            .contact-form-card { padding: 30px 20px; }
+            .whatsapp-float-btn { width: 55px; height: 55px; bottom: 20px; left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- אזור פתיחה (Hero) -->
+    <header class="hero-centered-section">
+        <div class="container text-center">
+            <div class="hero-main-container">
+                
+                <!-- תמונת הפתיחה העגולה "ברוכים 1.jfif" -->
+                <div class="hero-image-circle-wrapper">
+                    <img src="welcome.jfif" alt="ברוכים הבאים לבית המאוזן" class="hero-centered-img">
+                </div>
+                
+                <!-- תוכן וכיתוב שיווקי מתחת לתמונה -->
+                <div class="hero-content-below">
+                    <p class="brand-tagline">מבית בית הספר סימיליה</p>
+                    <h1 class="main-page-title">הבית המאוזן</h1>
+                    <h2 class="main-page-subtitle">הומאופתיה קלאסית ביתית</h2>
+                    <p class="hero-description">הביטחון, הידע והכלים המעשיים לטפל בעצמך ובמשפחה שלך בדרך טבעית, עדינה ושלמה.</p>
+                    <a href="#register" class="cta-button">לבחירת ערכה והרשמה לקורס</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- רובריקה על בית הספר סימיליה עם הלוגו העגול לצידו -->
+    <section style="background: #FFF; border-bottom: 1px solid rgba(93, 122, 104, 0.08);">
+        <div class="container">
+            <div class="syllabus-highlight-block" style="margin-bottom: 0; padding: 45px; background: var(--soft-cream);">
+                <div class="syllabus-block-text">
+                    <h2 style="font-size: 2rem; margin-bottom: 15px; color: var(--dark-charcoal);">בית הספר סימיליה</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #3A4640;">
+                        בבית הספר סימיליה, הומאופתיה אינה רק כלי טיפולי, אלא דרך חיים המשלבת דיוק קלאסי עם התפתחות של תודעה גבוהה. בהובלתה של מריאל טהר אלדמע, אנחנו מזמינים אותך למסע שבו הידע ההומאופתי פוגש הקשבה עמוקה לגוף ולנפש. בסימיליה, הלימוד הופך לחוויה מוחשית שבה הומאופתיה ביתית הופכת לכלי יומיומי של עוצמה, ביטחון ואחריות אישית, מתוך הבנה כי כל סימפטום הוא הזדמנות לצמיחה וריפוי אמיתי.
+                    </p>
+                </div>
+                <div class="syllabus-block-image-wrapper" style="flex: 0.6;">
+                    <img src="logo.jpeg" alt="לוגו בית הספר סימיליה" class="syllabus-round-img" style="max-width: 200px; border: 4px solid #FFF; box-shadow: 0 10px 25px rgba(93, 122, 104, 0.12);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- בלוק החיבור הרגשי -->
+    <section class="emotional-section">
+        <div class="container">
+            <div class="emotional-wrapper">
+                <div class="illustration-container">
+                    <img src="family.jfif" alt="משפחה בצבעי מים - סימיליה" class="main-watercolor-img">
+                </div>
+                <div class="emotional-text">
+                    <h2>כי הגוף והנפש הם אחד</h2>
+                    <p>אנחנו מאמינים שהדרך הנכונה לטפל בעצמנו ובקרובים לנו היא בהקשבה עמוקה לצרכים האמיתיים של הגוף. ברגעים של חום, בהלה, כאב או חולשה, אנחנו לא רוצים רק "להשתיק" את התסמינים – אנחנו רוצים להושיט יד תומכת ומאזנת למערכת החיסונית והחיונית שלנו.</p>
+                    <br>
+                    <p>במקום להעמיס על הגוף חומרים כימיים וסינתטיים בכל גיל, אתם יכולים להציע לו את הכלים העדינים והעוצמתיים ביותר של הטבע בריפוי עמוק, ללא נזקים, השלכות או אינטראקציות בין-תרופתיות.</p>
+                </div>
+            </div>
+
+            <!-- פרופיל מנחה רשמי מתחת לבלוק -->
+            <div class="text-center">
+                <div class="instructor-badge">
+                    <img src="instructor.jfif" alt="מריאל טהר אלדמע" class="instructor-avatar">
+                    <div>
+                        <h4>בהדרכת מריאל טהר אלדמע</h4>
+                        <p style="font-size: 0.95rem; color: #4D5A52; margin-top: 5px;">הומאופתית קלאסית ומייסדת בית הספר "סימיליה". מלווה אלפי משפחות, הורים ומבוגרים בדרך לחיים מאוזנים, עצמאיים ובריאים יותר.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- רכיבי המוצר -->
+    <section class="text-center">
+        <div class="container">
+            <h2>ערכת "הבית המאוזן" – הביטחון שלכם ארוז בקפידה</h2>
+            <p class="subtitle" style="margin-bottom: 10px;">כל מה שאתם צריכים כדי לפעול בשלווה ובדיוק בזמן אמת</p>
+            
+            <div class="grid-3-col">
+                <!-- קייס מהודר - כעת מכיל את פרטי המידות והאיטום ישירות בתוכו -->
+                <div class="circle-style-card">
+                    <div class="watercolor-circle">
+                        <img src="kit-bag.jfif" alt="קייס עזרה ראשונה - סימיליה">
+                    </div>
+                    <h3>הקייס המהודר</h3>
+                    <p style="font-size: 0.95rem; color: #4D5A52; margin-bottom: 12px;">מארז מעוצב, קשיח ועמיד, מושלם למגירה בבית וקליל לנשיאה בטיולים ובנסיעות.</p>
+                    <div class="metric-badge" style="font-size: 0.9rem; padding: 4px 16px; margin-bottom: 8px;">מידות: 180 מ"מ × 180 מ"מ</div>
+                    <p style="font-size: 0.85rem; font-style: italic; color: #5D7A68; line-height: 1.4;">מארז קשיח, מוגן ואטום לחלוטין לקרינת אור להגנה מקסימלית על הרמדיז</p>
+                </div>
+                <!-- חוברת אבחון -->
+                <div class="circle-style-card">
+                    <div class="watercolor-circle">
+                        <img src="booklet.jfif" alt="חוברת אבחון הומאופתית">
+                    </div>
+                    <h3>חוברת האבחון (PDF)</h3>
+                    <p style="font-size: 0.95rem; color: #4D5A52; margin-bottom: 12px;">מדריך מפורט ופשוט, שכתוב בגובה העיניים ובשפה מעשית ("האמא הבלשית"), שעוזר לכם לאבחן במהירות את המצב ולבחור את הטיפול המדויק.</p>
+                </div>
+                <!-- מפגש ליווי -->
+                <div class="circle-style-card">
+                    <div class="watercolor-circle">
+                        <img src="family.jfif" alt="מפגש ליווי" style="transform: scale(2.2); object-position: 50% 50%;">
+                    </div>
+                    <h3>מפגש ייעוץ אישי</h3>
+                    <p style="font-size: 0.95rem; color: #4D5A52; margin-bottom: 12px;">נעבור יחד על הרמדיז בערכה, נתרגל מקרים אמיתיים מהחיים (בהתאם לצרכים הספציפיים שלכם) ונענה על כל השאלות, כדי שתהיו מוכנים ובטוחים.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- אזור ההסבר על הקורס המשולב עם תמונת המחשב -->
+    <section style="background-color: rgba(255,255,255,0.5);">
+        <div class="container">
+            <div class="course-explanation-wrapper">
+                
+                <!-- צד הטקסט: כותרת והסבר כללי על הסילבוס -->
+                <div class="course-text-side">
+                    <h2>כל הכלים לטיפול בטוח – צעד אחר צעד</h2>
+                    <p class="subtitle" style="text-align: right; margin-bottom: 30px;">תלמדו להבדיל בין רמדי לרמדי ולטפל בביטחון מלא במצבים נפוצים באמצעות הקורס הדיגיטלי המקיף:</p>
+                    
+                    <!-- 1. רובריקה מורחבת: תינוקות -->
+                    <div class="syllabus-highlight-block">
+                        <div class="syllabus-block-text">
+                            <h3 style="font-size: 1.35rem; color: var(--dark-charcoal); margin-bottom: 12px; font-weight: 700;">תינוקות</h3>
+                            <ul>
+                                <li>איזון והרגעת חום בצורה בטוחה מגיל אפס</li>
+                                <li>הקלה עדינה ותמיכה בזמן בקיעת שיניים</li>
+                                <li>טיפול טבעי באי-שקט, גזים וחוסר נוחות בלילה</li>
+                            </ul>
+                        </div>
+                        <div class="syllabus-block-image-wrapper">
+                            <img src="baby.jfif" alt="עזרה ראשונה הומאופתית לתינוקות" class="syllabus-round-img">
+                        </div>
+                    </div>
+
+                    <!-- 2. רובריקה מורחבת: ילדים -->
+                    <div class="syllabus-highlight-block">
+                        <div class="syllabus-block-text">
+                            <h3 style="font-size: 1.35rem; color: var(--dark-charcoal); margin-bottom: 12px; font-weight: 700;">ילדים</h3>
+                            <ul>
+                                <li>טיפול יעיל בשיעול לסוגיו (נבחני, ליחתי, יבש)</li>
+                                <li>תמיכה בכאבי גדילה, כאבי בטן ממתח ואי-שקט רגשי</li>
+                                <li>מענה מהיר לפציעות קלות, חבלות ונפילות בשעות הפנאי</li>
+                            </ul>
+                        </div>
+                        <div class="syllabus-block-image-wrapper">
+                            <img src="children.jfif" alt="עזרה ראשונה הומאופתית לילדים" class="syllabus-round-img">
+                        </div>
+                    </div>
+
+                    <!-- 3. רובריקה מורחבת: מחלות עונתיות -->
+                    <div class="syllabus-highlight-block">
+                        <div class="syllabus-block-text">
+                            <h3 style="font-size: 1.35rem; color: var(--dark-charcoal); margin-bottom: 12px; font-weight: 700;">מחלות עונתיות</h3>
+                            <ul>
+                                <li>דלקות, טיפול ומניעת כאבי גרון</li>
+                                <li>כאבי אוזניים חדים ומציקים בזמן מעברי עונות</li>
+                                <li>רגישות, יובש ודלקות עיניים נפוצות</li>
+                                <li>חיזוק טבעי של מערכת הנשימה והחיסון</li>
+                            </ul>
+                        </div>
+                        <div class="syllabus-block-image-wrapper">
+                            <img src="seasonal.jfif" alt="טיפול הומאופתי במחלות עונתיות" class="syllabus-round-img">
+                        </div>
+                    </div>
+
+                    <!-- 4. רובריקה מורחבת: נפש ורגש בכל גיל -->
+                    <div class="syllabus-highlight-block">
+                        <div class="syllabus-block-text">
+                            <h3 style="font-size: 1.35rem; color: var(--dark-charcoal); margin-bottom: 12px; font-weight: 700;">נפש ורגש בכל גיל</h3>
+                            <ul>
+                                <li>איזון והרגעת מצבי חרדה, בהלה, טראומות פתאומיות וסטרס</li>
+                                <li>הקלה על קשיי שינה, סיוטים ליליים ואי-שקט פנימי</li>
+                                <li>תמיכה רגשית עמוקה לחיבור, ביטחון ותחושת איזון שלמה</li>
+                            </ul>
+                        </div>
+                        <div class="syllabus-block-image-wrapper">
+                            <img src="soul.jfif" alt="איזון נפש ורגש הומאופתי" class="syllabus-round-img">
+                        </div>
+                    </div>
+
+                    <!-- 5. רובריקה מורחבת: מערכת העיכול -->
+                    <div class="syllabus-highlight-block">
+                        <div class="syllabus-block-text">
+                            <h3 style="font-size: 1.35rem; color: var(--dark-charcoal); margin-bottom: 12px; font-weight: 700;">מערכת העיכול</h3>
+                            <ul>
+                                <li>הקלה מהירה ומניעת הקאות ובחילה טורדנית</li>
+                                <li>טיפול ואיזון שלשולים, קלקולי קיבה חריפים ווירוסים</li>
+                                <li>תמיכה טבעית בחוסר נוחות כללי, נפיחות וכאבי בטן מציקים</li>
+                            </ul>
+                        </div>
+                        <div class="syllabus-block-image-wrapper">
+                            <img src="digestive.jfif" alt="טיפול הומאופתי במערכת העיכול" class="syllabus-round-img">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- צד התמונה: שילוב תמונת המחשב העגולה "מחשב 1.jfif" -->
+                <div class="course-image-side">
+                    <img src="laptop.jfif" alt="הקורס הדיגיטלי הבית המאוזן" class="course-round-img">
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: var(--olive-green); font-weight: 600;">למידה דיגיטלית נוחה מכל מכשיר ובכל זמן</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- מדור לקוחות ממליצות ועדויות מהשטח -->
+    <section style="background-color: #F6F3EC; border-top: 1px solid rgba(93, 122, 104, 0.05); border-bottom: 1px solid rgba(93, 122, 104, 0.05);">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 10px;">מה אומרות המשפחות שלנו?</h2>
+            <p class="subtitle" class="text-center">אימהות ותלמידות מספרות על השינוי והביטחון שקיבלו בבית</p>
+            
+            <div class="testimonials-grid">
+                <!-- עדות 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        אחרי כל כך הרבה לילות חסרי שינה מול חום גבוה ודאגות, הקורס של מריאל פשוט שינה לנו את הבית. התיק המהודר שמגיע עם הקורס הפך להיות 'ארגז הכלים' הכי חשוב שלי – הכל מסודר, נגיש וברור. חוברת ההדרכה היא גאונית, פשוטה לקריאה ברגעי לחץ, אבל מעל הכל – היחס האישי של מריאל והיכולת שלה להקשיב ולהנחות ברוגע, נתנו לי את הביטחון שאני לא לבד. פתאום יש לי שליטה, וזה שווה הכל.
+                    </p>
+                    <span class="testimonial-author">ענת ל.</span>
+                </div>
+
+                <!-- עדות 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        חיפשתי להעמיק את הידע שלי בבריאות טבעית ולא רק 'לכבות שריפות'. מריאל מגישה את ההומאופתיה דרך פריזמה של תודעה גבוהה, וזה מרגיש כל כך נכון ומדויק. התיק לתרופות איכותי ומעוצב, והחוברת היא סיכום תמציתי ומקצועי שאני חוזרת אליו שוב ושוב. זה לא עוד קורס – זה בית ספר אמיתי לחיים. תודה על הזמינות והלב הגדול שהושקע בכל פרט קטן.
+                    </p>
+                    <span class="testimonial-author">ליאת ג.</span>
+                </div>
+
+                <!-- עדות 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        בהתחלה חששתי שזה מסובך מדי בשבילי, אבל מריאל הצליחה להנגיש את העולם המופלא של ההומאופתיה בשפה כל כך ברורה שכל אחת יכולה להבין. הציוד שמקבלים – החוברת והתיק המושקע – פשוט עושים חשק ללמוד ולתרגל. זה כל כך כיף לקבל מוצר שלם, מהודר ומוכן לעבודה. הרגשתי שמריאל מלווה אותי יד ביד, עונה על כל שאלה בסבלנות אין קץ. ממליצה בחום לכל אמא שרוצה ארגז כלים איכותי ומקצועי בבית.
+                    </p>
+                    <span class="testimonial-author">אורנה א.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- אזור הרכישה והמסלולים -->
+    <section id="pricing" class="text-center" style="background: rgba(244, 241, 233, 0.4);">
+        <div class="container">
+            <h2>בחרו את רמת הביטחון המתאימה לבית שלכם</h2>
+            <p>הקורס המלא, חוברת ההדרכה ומפגש הייעוץ כלולים בכל אחד מהמסלולים:</p>
+            
+            <div class="packages-wrapper">
+                
+                <!-- הערכה הבסיסית -->
+                <div class="package-item">
+                    <div class="package-image-circle">
+                        <img src="remedy-pack.jfif" alt="מארז 16 רמדיז - סימיליה">
+                    </div>
+                    <h3>הערכה הבסיסית</h3>
+                    <p style="color: var(--olive-green); font-weight: 600; margin-top: 5px;">הקורס המלא + מארז 16 רמדיז</p>
+                    <ul class="features-list">
+                        <li>גישה מלאה לכל תכני הקורס הדיגיטלי</li>
+                        <li>ערכת עזרה ראשונה פיזית הכוללת 16 רמדיז נבחרות</li>
+                        <li>חוברת הדרכה ואבחון דיגיטלית מעשית</li>
+                        <li>מפגש אישי וממוקד בזום עם מריאל</li>
+                    </ul>
+                    <a href="#register" class="cta-button" style="padding: 12px 35px; font-size: 1.1rem; width: 100%;">לבחירת המסלול הבסיסי</a>
+                </div>
+
+                <!-- הערכה המורחבת -->
+                <div class="package-item featured">
+                    <div class="featured-tag">הנמכר ביותר</div>
+                    <div class="package-image-circle">
+                        <img src="remedy-pack.jfif" alt="מארז 24 רמדיז מורחב - סימיליה">
+                    </div>
+                    <h3>הערכה המורחבת</h3>
+                    <p style="color: var(--olive-green); font-weight: 600; margin-top: 5px;">הקורס המלא + מארז 24 רmדיז</p>
+                    <ul class="features-list">
+                        <li>גישה מלאה לכל תכני הקורס הדיגיטלי</li>
+                        <li>ערכת עזרה ראשונה פיזית מורחבת הכוללת 24 רמדיז</li>
+                        <li>כיסוי רחב יותר למצבי שגרה, נסיעות ומקרים מגוונים</li>
+                        <li>חוברת הדרכה ואבחון דיגיטלית מעשית</li>
+                        <li>מפגש אישי וממוקד בזום עם מריאל</li>
+                    </ul>
+                    <a href="#register" class="cta-button" style="padding: 12px 35px; font-size: 1.1rem; width: 100%;">לבחירת המסלול המורחב</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- למי זה מתאים -->
+    <section style="background: rgba(244, 241, 233, 0.3);">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">האם הקורס הזה מתאים לכם?</h2>
+            <ul class="target-list">
+                <li>למי שרוצה לנהל את בריאות הבית והגוף באופן עצמאי, תוך הפחתת התלות בתרופות כימיות סינתטיות.</li>
+                <li>לאנשים מבוגרים המחפשים פתרון רפואי עדין, אפקטיבי לחלוטין ובטוח ללא חשש מתופעות לוואי או התנגשויות תרופתיות.</li>
+                <li>למשפחות, מטיילים וזוגות המחפשים מענה ועזרה ראשונה נגישה גם כשהם רחוקים מהבית או בנסיעות.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- אזור רישום וטופס הצטרפות -->
+    <section id="register" class="contact-form-section">
+        <div class="container text-center">
+            <h2>הבטיחו את מקומכם בקורס "הבית המאוזן"</h2>
+            <p class="subtitle" style="margin-bottom: 10px;">מלאו את הפרטים ונחזור אליכם בהקדם לתיאום ואספקת הערכה</p>
+            
+            <div class="contact-form-card">
+                <form id="leadForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">שם מלא</label>
+                        <input type="text" id="fullName" class="form-input" placeholder="שם ושם משפחה" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">מספר טלפון</label>
+                        <input type="tel" id="phoneNumber" class="form-input" placeholder="טלפון ליצירת קשר" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">כתובת אימייל</label>
+                        <input type="email" id="emailAddress" class="form-input" placeholder="דואר אלקטרוני" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageSelect">בחירת מסלול ערכה</label>
+                        <select id="packageSelect" class="form-input" style="appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%232A3630%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: left 14px center; background-size: 16px;">
+                            <option value="basic">הערכה הבסיסית (16 רמדיז + קורס + ליווי)</option>
+                            <option value="extended" selected>הערכה המורחבת (24 רמדיז + קורס + ליווי) - מומלץ</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%; border: none; cursor: pointer; margin-top: 10px;">שלח בקשת הצטרפות</button>
+                </form>
+                
+                <!-- הודעת הצלחה מובנית -->
+                <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 20px; background: rgba(93, 122, 104, 0.12); border-radius: 16px; color: var(--olive-green); font-weight: 600;">
+                    🌿 תודה רבה! פרטיך התקבלו בהצלחה בבית הספר סימיליה. ניצור עמך קשר טלפוני בהקדם האפשרי.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- שאלות נפוצות (FAQ) -->
+    <section>
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">שאלות נפוצות ותשובות שיעניקו לכם שקט</h2>
+            
+            <div class="faq-box">
+                <h3>האם הטיפול ההומאופתי עלול להיות מסוכן או להתנגש עם תרופות אחרות?</h3>
+                <p>בשום אופן לא. הומאופתיה קלאסית עושה שימוש ברמדיז המוכנים מחומרים טבעיים בלבד שעברו תהליך דילול וניעור מיוחד. הם אינם מכילים חומרים כימיים סינתטיים ואינם מתנגשים עם אף תרופה קונבנציונלית, מה שהופך אותם לבטוחים לחלוטין גם לגיל המבוגר וגם לתינוקות מגיל אפס.</p>
+            </div>
+
+            <div class="faq-box">
+                <h3>אני לא מגיע מהתחום הטיפולי, האם אצליח להבין את החומר?</h3>
+                <p>במאה אחוז. הקורס מבית סימיליה וחוברת ההדרכה נכתבו במיוחד עבור הציבור הרחב וללא שום צורך ברקע רפואי או טיפולי מוקדם. השפה פשוטה, ברורה ומעשית מאוד – המטרה היא שתדעו בדיוק מה לשלוף מהקייס בזמן אמת.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- פוטר המותג הרשמי -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 סימיליה - בית הספר להומאופתיה קלאסית ותודעה גבוהה | האתר הרשמי: <a href="https://similia.co.il" target="_blank" class="footer-link">similia.co.il</a></p>
+        </div>
+    </footer>
+
+    <!-- כפתור וואטסאפ צף קבוע המפנה לשיחה מהירה -->
+    <a href="https://wa.me/972524472017?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A8%D7%99%D7%90%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A0%D7%95%D7%A1%D7%A4%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A5%20%D7%94%D7%91%D7%99%D7%AA%20%D7%94%D7%9E%D7%90%D7%95%D7%96%D7%9F" class="whatsapp-float-btn" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.5 8.5 0 0 1-7.6-4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </a>
+
+    <!-- סקריפט לאינטראקטיביות וניהול טפסים -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // איסוף נתוני הטופס
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const email = document.getElementById('emailAddress').value;
+            const packageType = document.getElementById('packageSelect').value;
+            
+            // בדיקת קלט בסיסית
+            if (name && phone && email) {
+                // העלמת הטופס והצגת הודעת הצלחה
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('formSuccessMessage').style.display = 'block';
+                
+                // גלילה חלקה חזרה למעלה של תיבת הודעת ההצלחה
+                document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -74,6 +74,10 @@
 - **Render free tier spins down** after ~15min inactivity — frontend heartbeat mitigates this for active visitors
 - **Template literals in index.html** — the file historically had `\`` (backslash+backtick) instead of real backticks, silently breaking all JS. Always verify JS syntax after edits.
 
+## Contact Details
+
+- **WhatsApp / phone:** +972524472017 (Mariel) — used for WhatsApp float buttons across all pages
+
 ## Status (2026-06-10)
 
 - Site live at https://similia.co.il
