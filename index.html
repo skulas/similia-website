@@ -502,32 +502,32 @@
                     class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
                     <div>
                         <div class="bg-similia-darkBlue text-white p-6 relative min-h-[120px] flex items-center">
-                            <a href="#contact" onclick="fillProgramInquiry('מחלות אקוטיות ומטריה מדיקה')"
-                                class="font-serif text-xl sm:text-2xl font-bold hover:text-similia-gold transition-colors">מחלות אקוטיות ומטריה מדיקה</a>
+                            <a href="#contact" onclick="fillProgramInquiry('מחלות אקוטיות ומטריה מדיקה למתחילים')"
+                                class="font-serif text-xl sm:text-2xl font-bold hover:text-similia-gold transition-colors">מחלות אקוטיות ומטריה מדיקה למתחילים</a>
                         </div>
                         <div class="p-6 sm:p-8">
                             <p class="text-base text-similia-charcoal leading-relaxed">כאן אנחנו צוללים לעומק הדינמיקה של המחלה. בקורס זה נלמד "לקרוא" את סימני הגוף ולזהות את התרופות המתאימות ביותר למצבים אקוטיים. נלמד להכיר לעומק את המטריה מדיקה – עולם התרופות ההומאופתיות – כדי להבין את הקשר המופלא שבין הסימפטום הפיזי לתמונה הרחבה של המטופל.</p>
                         </div>
                     </div>
                     <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-end">
-                        <a href="#contact" onclick="fillProgramInquiry('מחלות אקוטיות ומטריה מדיקה')"
-                            class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all">פרטים והרשמה</a>
+                        <button onclick="openSyllabusModal()"
+                            class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all cursor-pointer">פרטים והרשמה</button>
                     </div>
                 </div>
                 <div
                     class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
                     <div>
                         <div class="bg-similia-darkBlue text-white p-6 relative min-h-[120px] flex items-center">
-                            <a href="#contact" onclick="fillProgramInquiry('התמחות במחלות כרוניות')"
-                                class="font-serif text-xl sm:text-2xl font-bold hover:text-similia-gold transition-colors">התמחות במחלות כרוניות</a>
+                            <a href="#contact" onclick="fillProgramInquiry('התמחות במחלות כרוניות למתקדמים')"
+                                class="font-serif text-xl sm:text-2xl font-bold hover:text-similia-gold transition-colors">התמחות במחלות כרוניות למתקדמים</a>
                         </div>
                         <div class="p-6 sm:p-8">
                             <p class="text-base text-similia-charcoal leading-relaxed">המסע המקצועי אל שורש הדברים. קורס זה מיועד למי שרוצה להבין את התהליכים הממושכים והעמוקים יותר של הגוף והנפש. נלמד לעבוד עם מצבים כרוניים, לזהות את הדפוסים התקועים בבסיסם, ולסייע בתהליך של החלמה שורשית וצמיחה תודעתית.</p>
                         </div>
                     </div>
                     <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-end">
-                        <a href="#contact" onclick="fillProgramInquiry('התמחות במחלות כרוניות')"
-                            class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all">פרטים והרשמה</a>
+                        <button onclick="openChronicModal()"
+                            class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all cursor-pointer">פרטים והרשמה</button>
                     </div>
                 </div>
             </div>
@@ -1161,6 +1161,249 @@
             document.getElementById('blog-modal').classList.add('hidden');
         }
     </script>
+
+<!-- Syllabus Modal -->
+<div id="syllabusModal" onclick="handleModalBackdropClick(event)"
+    style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(10,25,45,0.75); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#fbfaf6; border-radius:20px; max-width:700px; width:100%; max-height:88vh; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(10,25,45,0.4); border:1px solid rgba(197,160,89,0.3); overflow:hidden;" onclick="event.stopPropagation()">
+
+        <!-- Header -->
+        <div style="background:#20436d; padding:28px 32px 24px; position:relative; flex-shrink:0;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+                <button onclick="closeSyllabusModal()" aria-label="סגור"
+                    style="background:rgba(255,255,255,0.12); border:none; border-radius:50%; width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.2s;"
+                    onmouseover="this.style.background='rgba(197,160,89,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div style="text-align:right;">
+                    <p style="color:#c5a059; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">מסלול לימוד</p>
+                    <h2 style="color:#fff; font-family:serif; font-size:1.4rem; font-weight:700; line-height:1.4; margin:0;">סילבוס הכשרה: הומאופתיה קלאסית, אורגנון ותודעה – רמת מתחילים</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold divider -->
+        <div style="height:3px; background:linear-gradient(to left, transparent, #c5a059, transparent); flex-shrink:0;"></div>
+
+        <!-- Scrollable content -->
+        <div style="overflow-y:auto; padding:32px; direction:rtl; flex:1; scroll-behavior:smooth;"
+             onscroll="updateScrollIndicator(this)">
+
+            <p style="color:#3a4a3a; font-size:1rem; line-height:1.9; margin-bottom:28px;">
+                מסלול זה נועד להכשיר את המטפל העתידי דרך חיבור עמוק בין הכלים הקליניים המדויקים לבין התפיסה הרוחנית-קבלית של האדם.
+            </p>
+
+            <!-- Section A -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">א</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">מטריה מדיקה (Materia Medica) – שפת התרופות</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">היכרות עם עולם התרופות:</strong> הבנת הדינמיקה האנרגטית של חומרים מן הטבע (צומח, חי ודומם).</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">לימוד תרופות פוליכרסטים (Polychrests):</strong> ניתוח מעמיק של התרופות המובילות, למידת "תמונת התרופה" במצבי בריאות וחולי, והשוואה קלינית בין תרופות דומות (Differential Diagnosis).</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">הבנת המהות:</strong> זיהוי התדר האנרגטי של התרופה – כיצד היא משתקפת בעולמו הנפשי והפיזי של המטופל.</p>
+                </div>
+            </div>
+
+            <!-- Section B -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ב</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">אמנות לקיחת סימפטומים (Case Taking)</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">האזנה פעילה וזיהוי:</strong> איך מנהלים תשאול הומאופתי – בניית מרחב בטוח למטופל שמאפשר לו להיפתח.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">מיפוי הסימפטומים:</strong> אבחנה בין סימפטומים כלליים לסימפטומים מיוחדים (Particulars, Generals, Mentals). איך לזהות את ה"סימפטומים המובילים" שפותחים את השער למציאת התרופה.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">תיעוד וכתיבת מקרה:</strong> תרגול איסוף נתונים מדויק, הבנת ההיררכיה של התופעות הפיזיות והנפשיות בתהליך האבחון.</p>
+                </div>
+            </div>
+
+            <!-- Section C -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ג</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">מחלות אקוטיות – פעולה בזמן אמת</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">דינמיקה של מחלה אקוטית:</strong> הבנת התגובה החיונית של הגוף (חום, דלקות, כאב פתאומי) וקריאת האיתותים של כוח החיים.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">אסטרטגיה טיפולית:</strong> מתי נכון להתערב בהומאופתיה אקוטית ומתי נכון לאפשר למערכת להתאזן בעצמה.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">סימולציות מעשיות:</strong> תרגול על מקרי בוחן של מחלות נפוצות, תוך אינטגרציה של הידע שנצבר במטריה מדיקה.</p>
+                </div>
+            </div>
+
+            <!-- Section D -->
+            <div style="margin-bottom:12px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ד</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">האורגנון ולימוד קבלי משלים</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">האורגנון של אמנות הריפוי:</strong> לימוד מעמיק של האפוריזמים המכוננים של האנמן. הבנת חוק הריפוי הקלאסי, בחירת פוטנציות וניהול מעקב אחר התגובה לטיפול.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">לימוד קבלי – "תפקיד האדם בעולם":</strong> העמקה במבנה הנפש (נפש, רוח, נשמה). הבנת המחלה כביטוי לחסימה בתנועת הנשמה בעולם.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">הומאופתיה כתיקון:</strong> כיצד המעשה ההומאופתי הוא פעולת תיקון (Tikkun) – הפיכת המפגש הטיפולי לשליחות של העלאת ניצוצות וסיוע למטופל לממש את ייעודו האמיתי.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding:20px 32px; background:#f3f0e8; border-top:1px solid rgba(197,160,89,0.25); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; gap:12px;">
+            <button onclick="closeSyllabusModal()"
+                style="padding:10px 24px; border:1px solid #20436d; background:transparent; color:#20436d; border-radius:8px; font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.2s;"
+                onmouseover="this.style.background='#20436d'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#20436d'">סגור</button>
+            <a href="#contact" onclick="fillProgramInquiry('מחלות אקוטיות ומטריה מדיקה למתחילים'); closeSyllabusModal();"
+                style="padding:10px 28px; background:#20436d; color:#fff; border-radius:8px; font-size:0.85rem; font-weight:700; text-decoration:none; transition:all 0.2s; border:none;"
+                onmouseover="this.style.background='#c5a059'; this.style.color='#20436d'" onmouseout="this.style.background='#20436d'; this.style.color='#fff'">להרשמה לקורס</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openSyllabusModal() {
+        const modal = document.getElementById('syllabusModal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSyllabusModal() {
+        const modal = document.getElementById('syllabusModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    function handleModalBackdropClick(e) {
+        if (e.target === document.getElementById('syllabusModal')) closeSyllabusModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSyllabusModal(); closeChronicModal(); } });
+</script>
+
+<!-- Chronic Diseases Modal -->
+<div id="chronicModal" onclick="handleChronicBackdropClick(event)"
+    style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(10,25,45,0.75); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#fbfaf6; border-radius:20px; max-width:700px; width:100%; max-height:88vh; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(10,25,45,0.4); border:1px solid rgba(197,160,89,0.3); overflow:hidden;" onclick="event.stopPropagation()">
+
+        <!-- Header -->
+        <div style="background:#20436d; padding:28px 32px 24px; position:relative; flex-shrink:0;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+                <button onclick="closeChronicModal()" aria-label="סגור"
+                    style="background:rgba(255,255,255,0.12); border:none; border-radius:50%; width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.2s;"
+                    onmouseover="this.style.background='rgba(197,160,89,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div style="text-align:right;">
+                    <p style="color:#c5a059; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">מסלול לימוד</p>
+                    <h2 style="color:#fff; font-family:serif; font-size:1.4rem; font-weight:700; line-height:1.4; margin:0;">סילבוס הכשרה: התמחות במחלות כרוניות וטיפול תודעתי – רמת מתקדמים</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold divider -->
+        <div style="height:3px; background:linear-gradient(to left, transparent, #c5a059, transparent); flex-shrink:0;"></div>
+
+        <!-- Scrollable content -->
+        <div style="overflow-y:auto; padding:32px; direction:rtl; flex:1; scroll-behavior:smooth;">
+
+            <p style="color:#3a4a3a; font-size:1rem; line-height:1.9; margin-bottom:28px;">
+                מסלול זה מיועד להפוך את הלומד למטפל הומאופתי מיומן, המסוגל להתמודד עם מצבים כרוניים מורכבים וללוות את המטופל בתהליך עמוק של ריפוי וטרנספורמציה.
+            </p>
+
+            <!-- Section A -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">א</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">העמקה במטריה מדיקה ופתולוגיה כרונית</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">ניתוח תרופות עומק (Nosodes & Miasms):</strong> הבנת התשתית התורשתית והרכישה של מחלות כרוניות. שימוש בנוזודות לטיפול בחסימות עמוקות.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">השוואה קלינית במצבים כרוניים:</strong> הבחנה בין תרופות דומות במצבים ממושכים, לימוד תרופות "נדירות" וספציפיות למחלות אוטואימוניות וסימפטומים מורכבים.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">סימפטומים משניים ומוסתרים:</strong> איתור ה"דפוס הכרוני" בתוך שפת הגוף של המטופל.</p>
+                </div>
+            </div>
+
+            <!-- Section B -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ב</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">האורגנון – הממד המעשי והפילוסופי (פרקי המשך)</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">ניהול הטיפול הכרוני:</strong> לימוד מעמיק של האפוריזמים העוסקים בטיפול במחלות ממושכות, בחירת הפוטנציה הנכונה (Scale potency) וניהול דינמיקה של תגובות ארוכות טווח.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">הערכת הריפוי:</strong> כיצד מזהים התקדמות לפי "חוקי הריפוי של הרינג"? מתי לשנות תרופה ומתי להמתין בסבלנות.</p>
+                </div>
+            </div>
+
+            <!-- Section C -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ג</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">תרגול, דפי מקרה וסטאז' חי</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">ניתוח דפי מקרה (Case Analysis):</strong> עבודה על מקרים מורכבים מהקליניקה – פירוק סימפטומים, בניית טוטאליות וארגון המקרה לפי סדר חשיבות (Hierarchization).</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">סטאז' קליני (Live Cases):</strong> צפייה והשתתפות בניתוח מקרי אמת (בשידור חי). תרגול קבלת החלטות טיפוליות בזמן אמת תחת ליווי והדרכה.</p>
+                </div>
+            </div>
+
+            <!-- Section D -->
+            <div style="margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#20436d; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <span style="color:#c5a059; font-weight:800; font-size:0.85rem;">ד</span>
+                    </div>
+                    <h3 style="color:#20436d; font-family:serif; font-size:1.15rem; font-weight:700; margin:0;">לימוד קבלי מתקדם – תודעה וריפוי</h3>
+                </div>
+                <div style="border-right:3px solid #c5a059; padding-right:20px; margin-right:18px;">
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">הומאופתיה כתיקון נשמתי:</strong> הבנת מחלות כרוניות כביטוי לחוסר איזון בנתיב הנשמה. לימוד מושגים בקבלה (כמו "שבירת הכלים" ו"תיקון") בהקשר של החלמה ממחלה.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85; margin-bottom:10px;"><strong style="color:#20436d;">שחזור גלגולים (Past Life Regression) ככלי טיפולי:</strong> שימוש בטכניקות של דמיון מודרך ושחזור זיכרונות לצורך זיהוי "חוזה נשמתי" או טראומות שורש שבאות לידי ביטוי במחלה הכרונית.</p>
+                    <p style="color:#3a4a3a; font-size:0.95rem; line-height:1.85;"><strong style="color:#20436d;">עבודה אנרגטית ונוכחות המטפל:</strong> המטפל כצינור – איך לפתח את "הכלי" הפנימי של המטפל כדי לאפשר את הריפוי העמוק ביותר.</p>
+                </div>
+            </div>
+
+            <!-- Structure note -->
+            <div style="background:#ebf1f7; border-radius:14px; padding:20px 24px; border-right:4px solid #20436d;">
+                <p style="color:#20436d; font-size:0.9rem; font-weight:700; margin-bottom:6px;">מבנה הלימודים</p>
+                <p style="color:#3a4a3a; font-size:0.9rem; line-height:1.8; margin:0;">הקורס משלב ידע תיאורטי קלאסי, ניתוח מקרים מעשי, ותרגול אינטראקטיבי של סשנים טיפוליים, כדי להבטיח שהבוגרים יצאו עם הביטחון והיכולת להוביל תהליכי עומק בקליניקה שלהם.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding:20px 32px; background:#f3f0e8; border-top:1px solid rgba(197,160,89,0.25); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; gap:12px;">
+            <button onclick="closeChronicModal()"
+                style="padding:10px 24px; border:1px solid #20436d; background:transparent; color:#20436d; border-radius:8px; font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.2s;"
+                onmouseover="this.style.background='#20436d'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#20436d'">סגור</button>
+            <a href="#contact" onclick="fillProgramInquiry('התמחות במחלות כרוניות למתקדמים'); closeChronicModal();"
+                style="padding:10px 28px; background:#20436d; color:#fff; border-radius:8px; font-size:0.85rem; font-weight:700; text-decoration:none; transition:all 0.2s; border:none;"
+                onmouseover="this.style.background='#c5a059'; this.style.color='#20436d'" onmouseout="this.style.background='#20436d'; this.style.color='#fff'">להרשמה לקורס</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openChronicModal() {
+        document.getElementById('chronicModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeChronicModal() {
+        document.getElementById('chronicModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    function handleChronicBackdropClick(e) {
+        if (e.target === document.getElementById('chronicModal')) closeChronicModal();
+    }
+</script>
+
 </body>
 
 </html>
