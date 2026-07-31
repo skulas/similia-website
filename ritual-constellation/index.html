@@ -25,7 +25,7 @@
     <!-- פונטים מגוגל -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Secular+One&display=swap" rel="stylesheet">
     
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
@@ -38,9 +38,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#2E5A88',
+                            blue: '#1E3A8A',
                             gold: '#C8A97E',
-                            dark: '#1C3D5A',
+                            dark: '#070B16',
+                            lightGray: '#F1F5F9'
                         }
                     }
                 }
@@ -50,8 +51,8 @@
 
     <style>
         /* הגדרות פונטים בסיסיות */
-        body { font-family: 'Rubik', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, h4, .serif-font { font-family: 'Frank Ruhl Libre', serif; }
+        body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, .serif-font { font-family: 'Secular One', sans-serif; }
         
         /* כפתור וואטסאפ צף */
         .whatsapp-float {
@@ -76,8 +77,8 @@
         
         /* עיצוב צ'קבוקס מותאם אישית (לדיוור) */
         .custom-checkbox input:checked + div {
-            background-color: #2E5A88;
-            border-color: #2E5A88;
+            background-color: #1E3A8A;
+            border-color: #1E3A8A;
         }
         .custom-checkbox input:checked + div svg { opacity: 1; }
 
@@ -303,7 +304,7 @@
                         <!-- לוגו סימיליה -->
                         <img src="logo-round.jpeg" alt="לוגו סימיליה" class="w-full h-full object-contain rounded-full">
                     </div>
-                    <h3 class="text-3xl font-black text-brand-blue mb-4">סימיליה - בית ספר לתודעה גבוהה</h3>
+                    <h3 class="text-3xl font-black text-brand-blue mb-4">סימיליה - בית להומאופתיה קלאסית, צמיחה והתפתחות</h3>
                     <p class="text-lg md:text-xl text-gray-900 leading-loose font-medium">
                         הקורס יוצא מתוך ומוגש על ידי "סימיליה". בית הספר מהווה מגדלור ללימודי תודעה, התפתחות אישית והומאופתיה קלאסית, ומעניק בית חם למטפלים ותלמידים המבקשים לרכוש כלים מעשיים.
                     </p>
@@ -313,12 +314,12 @@
                 <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl text-center border-2 border-brand-gold flex flex-col justify-center">
                     <div class="w-48 h-48 mx-auto mb-8 rounded-full bg-[#FDFBF7] flex items-center justify-center shadow-md border-4 border-brand-gold overflow-hidden relative">
                          <!-- תמונת המרצה -->
-                         <img src="instructor-photo.jpeg" alt="מריאל טהר אלדמע" class="w-full h-full object-cover">
+                         <img src="instructor-photo.png" alt="מריאל טהר אלדמע" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-2xl text-brand-gold font-black mb-2">המרצה ויוצרת הקלפים</h3>
                     <h3 class="text-4xl font-black text-brand-blue mb-6">מריאל טהר אלדמע</h3>
                     <p class="text-lg md:text-xl text-gray-900 leading-loose font-medium">
-                        מנהלת בית הספר סימיליה, ויוצרת ערכת "קלפי השמאן העברי". מריאל מובילה את הקורס בקבוצות קטנות ואינטימיות כדי להעניק ליווי אישי וצמוד לכל משתתף, תוך שילוב עומק רוחני עם פרקטיקה יישומית.
+                        מנהלת סימיליה, ויוצרת ערכת "קלפי השמאן העברי". מריאל מובילה את הקורס בקבוצות קטנות ואינטימיות כדי להעניק ליווי אישי וצמוד לכל משתתף, תוך שילוב עומק רוחני עם פרקטיקה יישומית.
                     </p>
                 </div>
 
@@ -518,13 +519,13 @@
 
     <footer class="w-full text-center py-12 mt-16 border-t border-gray-300 text-gray-500 text-sm space-y-4">
         <div class="text-brand-dark text-xl md:text-2xl font-black space-y-2 px-4">
-            <p class="text-brand-blue">סימליה - בית להומאופתיה קלאסית, צמיחה והתפתחות</p>
+            <p class="text-brand-blue">סימיליה - בית להומאופתיה קלאסית, צמיחה והתפתחות</p>
             <p><a href="https://similia.co.il" target="_blank" class="text-brand-dark hover:text-brand-gold underline transition">similia.co.il</a></p>
         </div>
 
         <div class="max-w-2xl mx-auto px-6 leading-relaxed text-xs text-gray-400 font-medium pt-4 space-y-2">
             <p>
-                © כל הזכויות שמורות ל-סימליה בית ללימודי הומאופתיה קלאסית, צמיחה והתפתחות. אין להעתיק, לשכפל, להפיץ או למכור שום חלק מדף זה ללא אישור מפורש בכתב מבעל הזכויות. 2026
+                © כל הזכויות שמורות ל-סימיליה בית ללימודי הומאופתיה קלאסית, צמיחה והתפתחות. אין להעתיק, לשכפל, להפיץ או למכור שום חלק מדף זה ללא אישור מפורש בכתב מבעל הזכויות. 2026
             </p>
             <p>
                 בית הספר שומר לעצמו את הזכות לבצע שינויים במחיר הקורס, במועדים, בסילבוס ובפרטי המנהלה בכל עת ועל פי שיקול דעתו הבלעדי.
