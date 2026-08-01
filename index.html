@@ -91,8 +91,26 @@
             transform: scale(1.08);
         }
 
+        .twinkle-star {
+            display: inline-block;
+            color: #c5a059;
+            animation: twinkle 1.6s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3) rotate(15deg);
+                opacity: 0.6;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .wave-bar { animation: none; }
+            .twinkle-star { animation: none; }
         }
 
         .wave-bars-paused .wave-bar { animation-play-state: paused; }
@@ -193,8 +211,8 @@
                         class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">שיטת
                         א.מ.ש</a>
                     <a href="#programs"
-                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">מסלולי
-                        לימוד</a>
+                        class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm">חוג
+                        שנתי ⭐</a>
                     <a href="#consciousness-courses"
                         class="text-similia-darkBlue hover:text-similia-goldDark transition-colors font-semibold text-sm text-similia-goldDark">קורסי
                         תודעה גבוהה</a>
@@ -229,8 +247,8 @@
             <a href="#ems-method" onclick="toggleMobileMenu()"
                 class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">שיטת א.מ.ש</a>
             <a href="#programs" onclick="toggleMobileMenu()"
-                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">מסלולי
-                לימוד</a>
+                class="block text-similia-darkBlue hover:text-similia-goldDark font-semibold text-base py-1">חוג שנתי
+                ⭐</a>
             <a href="#consciousness-courses" onclick="toggleMobileMenu()"
                 class="block text-similia-goldDark hover:text-similia-goldDark font-semibold text-base py-1">קורסי תודעה
                 גבוהה</a>
@@ -303,7 +321,7 @@
                         </a>
                         <a href="#programs"
                             class="px-8 py-3.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white font-bold rounded-lg shadow-lg transition-all text-center">
-                            מסלולי הלימוד השנתיים
+                            חוג שנתי <span class="twinkle-star" aria-hidden="true">⭐</span>
                         </a>
                     </div>
                 </div>
@@ -479,27 +497,11 @@
                 <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">אקדמיה מקצועית
                     לעומק</span>
                 <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
-                    מסלולי הלימוד של סימיליה
+                    חוג שנתי <span class="twinkle-star" aria-hidden="true">⭐</span>
                     <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
                 </h2>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-10">
-                <div
-                    class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="bg-similia-darkBlue text-white p-6 relative min-h-[120px] flex items-center">
-                            <a href="/homeo-family-pack/"
-                                class="font-serif text-xl sm:text-2xl font-bold hover:text-similia-gold transition-colors">הומאופתיה ביתית: עזרה ראשונה טבעית</a>
-                        </div>
-                        <div class="p-6 sm:p-8">
-                            <p class="text-base text-similia-charcoal leading-relaxed">הצעד הראשון בדרך לאוטונומיה משפחתית. בקורס זה נלמד כיצד להגיב לסיטואציות יומיומיות – מחבלות ועד מחלות קלות – מתוך שקט נפשי וביטחון. זהו ארגז הכלים הבסיסי לכל אמא ומשפחה שרוצה להעניק מענה טבעי, מהיר ומדויק בתוך הבית.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-end">
-                        <a href="/homeo-family-pack/"
-                            class="px-5 py-2 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all">פרטים והרשמה</a>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                 <div
                     class="bg-similia-cream border border-similia-gold/30 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between">
                     <div>
@@ -570,7 +572,7 @@
                 <span class="text-similia-goldDark font-bold tracking-wider text-xs uppercase block mb-2">מרחב התפתחות
                     ותבונה</span>
                 <h2 class="font-serif text-3xl sm:text-4xl text-similia-darkBlue font-bold relative inline-block pb-3">
-                    קורסים ייחודיים בתחום התודעה הגבוהה
+                    קורסים וסדנאות
                     <span class="absolute bottom-0 left-1/4 right-1/4 h-[3px] bg-similia-gold rounded-full"></span>
                 </h2>
             </div>
@@ -673,6 +675,34 @@
                     <div
                         class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
                         <a href="/lucid-dreaming/"
+                            class="px-5 py-2.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all shadow">הרשמה
+                            והבטחת מקום</a>
+                    </div>
+                </div>
+                <div onclick="window.location='/homeo-family-pack/'"
+                    class="bg-white border border-similia-gold/30 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-2xl transition-all relative cursor-pointer">
+                    <div
+                        class="absolute top-4 left-4 bg-similia-gold text-similia-darkBlue text-[11px] font-bold px-3 py-1 rounded-full">
+                        לכל המשפחה</div>
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 rounded-full bg-similia-gold/10 flex items-center justify-center text-similia-goldDark text-2xl">
+                                <i class="fa-solid fa-house-medical"></i></div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-similia-darkBlue">הומאופתיה ביתית: עזרה
+                                    ראשונה טבעית</h3>
+                                <p class="text-xs text-similia-goldDark font-semibold">ערכת בית • לכל אמא ומשפחה</p>
+                            </div>
+                        </div>
+                        <p class="text-base text-similia-charcoal leading-relaxed">הצעד הראשון בדרך לאוטונומיה
+                            משפחתית. בקורס זה נלמד כיצד להגיב לסיטואציות יומיומיות – מחבלות ועד מחלות קלות – מתוך שקט
+                            נפשי וביטחון. זהו ארגז הכלים הבסיסי לכל אמא ומשפחה שרוצה להעניק מענה טבעי, מהיר ומדויק בתוך
+                            הבית.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-similia-lightBlue/20 border-t border-similia-gold/20 flex items-center justify-between">
+                        <a href="/homeo-family-pack/"
                             class="px-5 py-2.5 bg-similia-darkBlue hover:bg-similia-gold hover:text-similia-darkBlue text-white rounded-lg text-xs font-bold transition-all shadow">הרשמה
                             והבטחת מקום</a>
                     </div>
