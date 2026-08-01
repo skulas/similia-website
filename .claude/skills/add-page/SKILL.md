@@ -42,10 +42,11 @@ English, kebab-case, 2–3 words, matching existing folders: `ritual-constellati
 - Standard meta (charset, viewport, title, description, canonical `https://similia.co.il/<slug>/`)
 - OG tags + `twitter:card`, `og:image` → `https://similia.co.il/logo-similia.jpg` unless the page has its own hero image
 - Favicons: the standard 4 `<link>` tags (`/favicon.ico`, 32x32, 16x16, apple-touch-icon) — always these exact paths
-- Fonts (exact Google Fonts URL):
+- Fonts (exact Google Fonts URL — the whole site, including every blog post, standardized on a single family, Miriam Libre, as of 2026-08-01):
   ```
-  https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Secular+One&family=Playfair+Display:ital,wght@1,500&display=swap
+  https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap
   ```
+  Miriam Libre only ships weights 400/700 and no italic — CSS asking for other weights/italic will be browser-synthesized, which is accepted site-wide.
 - `<script src="https://cdn.tailwindcss.com"></script>` + this exact Tailwind config (the site's real design tokens):
   ```js
   tailwind.config = {
@@ -55,7 +56,7 @@ English, kebab-case, 2–3 words, matching existing folders: `ritual-constellati
         gold: '#c5a059', goldDark: '#7a5e24', cream: '#fbfaf6', charcoal: '#1d232a'
       } },
       fontFamily: {
-        sans: ['Assistant', 'sans-serif'], serif: ['Secular One', 'serif'], decorative: ['Playfair Display', 'serif']
+        sans: ['Miriam Libre', 'serif'], serif: ['Miriam Libre', 'serif'], decorative: ['Miriam Libre', 'serif']
       }
     } }
   }
@@ -98,9 +99,9 @@ English, kebab-case, 2–3 words, matching existing folders: `ritual-constellati
 | its gold tone | `similia-gold` (solid bg) / `similia-goldDark` (text on light bg) |
 | its light/bg tone | `similia-cream` or `similia-lightBlue/20` |
 | its muted/dark text tone | `similia-charcoal` |
-| body font (Rubik, Open Sans, etc.) | `Assistant` |
-| heading font (Frank Ruhl Libre, etc.) | `Secular One` (via `font-serif`) |
-| any "handwriting"/decorative/quote font | `Playfair Display` italic (via `font-decorative italic`) |
+| body font (Rubik, Open Sans, Assistant, etc.) | `Miriam Libre` |
+| heading font (Frank Ruhl Libre, Secular One, etc.) | `Miriam Libre` (via `font-serif`) |
+| any "handwriting"/decorative/quote font | `Miriam Libre` (via `font-decorative`) — no true italic face exists, so drop `italic` or let the browser fake it |
 
 Section wrapper convention: alternate `bg-white` / `bg-similia-cream`, each `border-y border-similia-gold/10`, `py-16 md:py-20`.
 
