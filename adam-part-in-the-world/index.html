@@ -22,7 +22,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600;700;800&family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,20 +44,16 @@
     </script>
 
     <style>
-        body { 
-            font-family: 'Assistant', sans-serif; 
-            font-weight: 700; 
-            background-image: linear-gradient(180deg, rgba(7, 11, 22, 0.75) 0%, rgba(7, 11, 22, 0.85) 100%);
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
-            color: #FFFFFF; 
+        body {
+            font-family: 'Miriam Libre', serif;
+            font-weight: 700;
+            background-color: #FDFBF7;
+            color: #111827;
         }
-        h1, h2, h3, h4 { 
-            font-family: 'Secular One', sans-serif; 
-            color: #FFFFFF; 
+        h1, h2, h3, h4 {
+            font-family: 'Miriam Libre', serif;
         }
-        
+
         .cosmic-hero {
             position: relative;
             background-image: url('desert-walk.png');
@@ -65,66 +61,38 @@
             background-position: center 30%;
             background-attachment: scroll;
         }
-        
+
         .cosmic-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(7, 11, 22, 0.65) 0%, rgba(7, 11, 22, 0.8) 100%);
+            background: linear-gradient(180deg, rgba(7, 11, 22, 0.75) 0%, rgba(7, 11, 22, 0.55) 55%, rgba(253, 251, 247, 0.95) 100%);
             z-index: 1;
         }
 
-        /* --- מערכת הארה דינמית ממוקדת בלבד --- */
-        
-        /* כותרות ראשיות ותת-כותרות מגיבות בהארה קוסמית מרהיבה */
-        h1, h2, h3, h4 {
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        h1:hover, h1:active {
-            text-shadow: 0 0 25px rgba(255, 255, 255, 0.95), 0 0 15px rgba(200, 169, 126, 0.85);
-        }
-        
-        h2:hover, h2:active, h3:hover, h3:active, h4:hover, h4:active {
-            text-shadow: 0 0 20px rgba(200, 169, 126, 0.9), 0 0 8px rgba(255, 255, 255, 0.6);
-            color: #FFFFFF !important;
+        .gold-gradient {
+            background: linear-gradient(135deg, #C8A97E 0%, #E6D2B5 100%);
         }
 
-        /* טקסט רץ רגיל אינו מואר ונשאר יציב לחלוטין לטובת נוחות קריאה מקסימלית */
-        p, span, li, label {
-            text-shadow: none !important;
-        }
-
-        /* כרטיסיות ומלבנים בולטים בתלת-ממד */
+        /* כרטיסיות בולטות בתלת-ממד קל */
         .dynamic-element {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
         .dynamic-element:hover, .dynamic-element:active {
             transform: translateY(-5px);
-            box-shadow: 0 0 35px rgba(200, 169, 126, 0.45), 0 12px 24px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
             border-color: #C8A97E !important;
-            background-color: rgba(15, 23, 42, 0.96) !important;
         }
 
-        /* כפתורי פעולה מגיבים בהארה אנרגטית */
+        /* כפתורי פעולה */
         .dynamic-btn {
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
         .dynamic-btn:hover, .dynamic-btn:active {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 25px rgba(200, 169, 126, 0.85), 0 10px 20px rgba(0, 0, 0, 0.4);
-            filter: brightness(1.15);
+            filter: brightness(1.08);
         }
         .btn-press:active {
             transform: scale(0.97);
-        }
-
-        /* תמונות ומותגים זוהרים */
-        img {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        img:hover, img:active {
-            filter: brightness(1.18) contrast(1.05);
-            box-shadow: 0 0 30px rgba(200, 169, 126, 0.7);
         }
     </style>
 
@@ -221,97 +189,94 @@
     <main class="py-12 px-4 space-y-24 font-bold text-lg">
         
         <!-- שלב 2: דברי פתיחה מורחבים והצפת הפער -->
-        <section class="container mx-auto max-w-4xl bg-brand-dark/80 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-lg border-r-8 border-brand-gold relative overflow-hidden">
-            <!-- שכבת רקע מטריקס חצי שקוף למסתוריות ועומק -->
-            <div class="absolute inset-0 bg-cover bg-center opacity-45 z-0" style="background-image: url('matrix.png');"></div>
-            
+        <section class="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl shadow-xl border-r-8 border-brand-gold relative overflow-hidden">
             <div class="relative z-10">
-                <h2 class="text-3xl md:text-5xl font-black mb-10 text-brand-gold drop-shadow">האם הידע שלך נשאר "בשמיים" – או שהוא פועל בארץ?</h2>
-                
-                <p class="text-xl leading-relaxed mb-8 text-gray-200">
+                <h2 class="text-3xl md:text-5xl font-black mb-10 text-brand-blue">האם הידע שלך נשאר "בשמיים" – או שהוא פועל בארץ?</h2>
+
+                <p class="text-xl leading-relaxed mb-8 text-gray-900">
                     אנשים רבים שנחשפים לעולמות התודעה והקבלה מגלים חכמה אינסופית, אך מוצאים את עצמם שוב ושוב באותן נקודות של תקיעות:
                 </p>
 
-                <!-- 3 כרטיסיות תקיעות המעוצבות ככפתורי תלת-ממד בולטים ומוארים, ללא מספרים, ללא הסברים -->
+                <!-- 3 כרטיסיות תקיעות, ללא מספרים, ללא הסברים -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="dynamic-element bg-brand-dark/90 backdrop-blur-md p-6 rounded-2xl border-2 border-brand-gold/40 shadow-lg flex items-center justify-center min-h-[110px] transform cursor-pointer">
-                        <h3 class="text-xl md:text-2xl font-black text-white leading-snug">מלכודת הלימוד האינסופי</h3>
-                    </div>
-                    
-                    <div class="dynamic-element bg-brand-dark/90 backdrop-blur-md p-6 rounded-2xl border-2 border-brand-gold/40 shadow-lg flex items-center justify-center min-h-[110px] transform cursor-pointer">
-                        <h3 class="text-xl md:text-2xl font-black text-white leading-snug">חוסר סינכרון</h3>
+                    <div class="dynamic-element bg-[#FDFBF7] p-6 rounded-2xl border-2 border-brand-gold/40 shadow-md flex items-center justify-center min-h-[110px] transform cursor-pointer">
+                        <h3 class="text-xl md:text-2xl font-black text-brand-blue leading-snug">מלכודת הלימוד האינסופי</h3>
                     </div>
 
-                    <div class="dynamic-element bg-brand-dark/90 backdrop-blur-md p-6 rounded-2xl border-2 border-brand-gold/40 shadow-lg flex items-center justify-center min-h-[110px] transform cursor-pointer">
-                        <h3 class="text-xl md:text-2xl font-black text-white leading-snug">הפער בין חומר לרוח</h3>
+                    <div class="dynamic-element bg-[#FDFBF7] p-6 rounded-2xl border-2 border-brand-gold/40 shadow-md flex items-center justify-center min-h-[110px] transform cursor-pointer">
+                        <h3 class="text-xl md:text-2xl font-black text-brand-blue leading-snug">חוסר סינכרון</h3>
+                    </div>
+
+                    <div class="dynamic-element bg-[#FDFBF7] p-6 rounded-2xl border-2 border-brand-gold/40 shadow-md flex items-center justify-center min-h-[110px] transform cursor-pointer">
+                        <h3 class="text-xl md:text-2xl font-black text-brand-blue leading-snug">הפער בין חומר לרוח</h3>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- שלב 3: הפתרון וכותרת קריאה לפעולה אינטלקטואלית -->
-        <section class="container mx-auto max-w-4xl bg-brand-dark/80 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-xl border-t-8 border-brand-blue">
-            <h3 class="text-2xl md:text-3xl font-black text-brand-gold mb-6 text-center md:text-right">אז מה לדעתכם תפקידו של האדם בעולם?</h3>
-            <p class="text-xl leading-relaxed mb-10 text-gray-200">
+        <section class="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl shadow-xl border-t-8 border-brand-blue">
+            <h3 class="text-2xl md:text-3xl font-black text-brand-blue mb-6 text-center md:text-right">אז מה לדעתכם תפקידו של האדם בעולם?</h3>
+            <p class="text-xl leading-relaxed mb-10 text-gray-900">
                 הקורס "תפקידו של האדם בעולם" בסימיליה נבנה בדיוק עבור מי שמוכן לעלות שלב. לא מדובר בעוד קורס של הרצאות תיאורטיות, אלא במרחב חקירה ויישום שמטרתו אחת: הבנה ויישום של המנגנון האקטיבי שלך במציאות.
             </p>
-            
-            <div class="text-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border-2 border-dashed border-brand-gold my-8">
-                <h3 class="text-3xl md:text-4xl font-black text-brand-gold mb-4">האם אתם מוכנים לעלות כיתה?</h3>
-                <p class="text-lg text-gray-200">במהלך הקורס נפרק את חוקי המבנה התודעתי ונלמד:</p>
+
+            <div class="text-center bg-[#F4F1EA] p-8 rounded-2xl border-2 border-dashed border-brand-gold my-8">
+                <h3 class="text-3xl md:text-4xl font-black text-brand-blue mb-4">האם אתם מוכנים לעלות כיתה?</h3>
+                <p class="text-lg text-gray-900">במהלך הקורס נפרק את חוקי המבנה התודעתי ונלמד:</p>
             </div>
         </section>
 
         <!-- סילבוס ומפת דרכים מפורטת - 6 מפגשים דחוסים, מבוצרים ומובלטים -->
         <section class="container mx-auto max-w-5xl px-4">
-            <h2 class="text-3xl md:text-5xl font-black text-center mb-16 text-brand-gold drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">סילבוס</h2>
+            <h2 class="text-3xl md:text-5xl font-black text-center mb-16 text-brand-blue">סילבוס</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- מפגש 1 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">01</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">הארכיטקטורה של הקיום</h3>
-                        <p class="text-gray-100 leading-relaxed">מתחילים מההתחלה. הבנת המבנה הארכיטקטוני של הבריאה, איך המערכת הגדולה הזו מעוצבת ומאורגנת עוד לפני שהחומר בכלל הופיע.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">הארכיטקטורה של הקיום</h3>
+                        <p class="text-gray-900 leading-relaxed">מתחילים מההתחלה. הבנת המבנה הארכיטקטוני של הבריאה, איך המערכת הגדולה הזו מעוצבת ומאורגנת עוד לפני שהחומר בכלל הופיע.</p>
                     </div>
                 </div>
                 <!-- מפגש 2 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">02</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">מהאין-סוף אל הפיזיקה</h3>
-                        <p class="text-gray-100 leading-relaxed">איך רעיון רוחני הופך למציאות קונקרטית? מסלול הירידה של האור מהאין-סוף למתמטיקה ולחוקי הפיזיקה המנהלים את העולם הפיזי שלנו.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">מהאין-סוף אל הפיזיקה</h3>
+                        <p class="text-gray-900 leading-relaxed">איך רעיון רוחני הופך למציאות קונקרטית? מסלול הירידה של האור מהאין-סוף למתמטיקה ולחוקי הפיזיקה המנהלים את העולם הפיזי שלנו.</p>
                     </div>
                 </div>
                 <!-- מפגש 3 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">03</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">סוד ה"מהלך מדבר"</h3>
-                        <p class="text-gray-100 leading-relaxed">האדם נבדל מהטבע כ"מדבר". נחקור את המנגנון הפנימי של יצירת מחשבה ודיבור, ואיך הם משמשים ככלים האקטיביים בעיצוב חייו.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">סוד ה"מהלך מדבר"</h3>
+                        <p class="text-gray-900 leading-relaxed">האדם נבדל מהטבע כ"מדבר". נחקור את המנגנון הפנימי של יצירת מחשבה ודיבור, ואיך הם משמשים ככלים האקטיביים בעיצוב חייו.</p>
                     </div>
                 </div>
                 <!-- מפגש 4 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">04</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">המנוע האנרגטי של האדם</h3>
-                        <p class="text-gray-100 leading-relaxed">מהו ה"דלק"? ההבדל בין אנרגיה קינטית לאנרגיה אקוסטית (תהודה), וכיצד השילוב ביניהן מפעיל אותך בבריאה.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">המנוע האנרגטי של האדם</h3>
+                        <p class="text-gray-900 leading-relaxed">מהו ה"דלק"? ההבדל בין אנרגיה קינטית לאנרגיה אקוסטית (תהודה), וכיצד השילוב ביניהן מפעיל אותך בבריאה.</p>
                     </div>
                 </div>
                 <!-- מפגש 5 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">05</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">רשת התודעה הקולקטיבית</h3>
-                        <p class="text-gray-100 leading-relaxed">איך להפוך מתחנת "חוסמת אור" לתחנת ממסר שמייצרת תהודה חיובית במרחב האנושי ועבודה מול תודעת הכלל.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">רשת התודעה הקולקטיבית</h3>
+                        <p class="text-gray-900 leading-relaxed">איך להפוך מתחנת "חוסמת אור" לתחנת ממסר שמייצרת תהודה חיובית במרחב האנושי ועבודה מול תודעת הכלל.</p>
                     </div>
                 </div>
                 <!-- מפגש 6 -->
-                <div class="dynamic-element p-8 bg-brand-dark/90 backdrop-blur-md border-2 border-brand-gold/50 rounded-2xl shadow-xl flex flex-col justify-between transform hover:-translate-y-2">
+                <div class="dynamic-element p-8 bg-white border-2 border-brand-gold/50 rounded-2xl shadow-lg flex flex-col justify-between transform hover:-translate-y-2">
                     <div>
                         <div class="text-4xl font-black text-brand-gold mb-4 font-secular">06</div>
-                        <h3 class="text-2xl font-black mb-4 text-white">שבעת הגופים והמימוש</h3>
-                        <p class="text-gray-100 leading-relaxed">מפגש הנעילה והאינטגרציה. הכרת המבנה הפנימי של האדם ולקיחת אחריות מלאה למימוש עצמי כיצור פונקציונלי, יוצר ומשפיע.</p>
+                        <h3 class="text-2xl font-black mb-4 text-brand-blue">שבעת הגופים והמימוש</h3>
+                        <p class="text-gray-900 leading-relaxed">מפגש הנעילה והאינטגרציה. הכרת המבנה הפנימי של האדם ולקיחת אחריות מלאה למימוש עצמי כיצור פונקציונלי, יוצר ומשפיע.</p>
                     </div>
                 </div>
             </div>
@@ -319,65 +284,65 @@
 
         <!-- היכרות עם בית הספר והמרצה -->
         <section class="container mx-auto max-w-5xl px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-brand-dark/85 backdrop-blur-md p-8 rounded-3xl border-2 border-brand-blue shadow-lg text-center flex flex-col justify-between">
+            <div class="bg-white p-8 rounded-3xl border-2 border-brand-blue shadow-lg text-center flex flex-col justify-between">
                 <div>
                     <!-- לוגו סימיליה -->
                     <img src="logo-round.jpeg" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-gold mb-6 object-contain p-1">
-                    <h3 class="text-3xl font-black mb-4 text-brand-gold">סימיליה</h3>
-                    <p class="text-gray-200">בית להומאופתיה קלאסית, צמיחה והתפתחות, המשלב חקירה תודעתית מעמיקה יחד עם שאיפה חסרת פשרות לתוצאות ויישום מעשי יומיומי.</p>
+                    <h3 class="text-3xl font-black mb-4 text-brand-blue">סימיליה</h3>
+                    <p class="text-gray-900">בית להומאופתיה קלאסית, צמיחה והתפתחות, המשלב חקירה תודעתית מעמיקה יחד עם שאיפה חסרת פשרות לתוצאות ויישום מעשי יומיומי.</p>
                 </div>
             </div>
-            <div class="bg-brand-dark/85 backdrop-blur-md p-8 rounded-3xl border-2 border-brand-gold shadow-lg text-center flex flex-col justify-between">
+            <div class="bg-white p-8 rounded-3xl border-2 border-brand-gold shadow-lg text-center flex flex-col justify-between">
                 <div>
                     <!-- תמונת המרצה מריאל -->
                     <img src="instructor-photo.png" alt="מריאל טהר אלדמע" class="w-32 h-32 mx-auto rounded-full border-2 border-brand-blue mb-6 object-cover">
                     <h3 class="text-2xl text-brand-gold font-black mb-2">מנחת הקורס</h3>
-                    <h3 class="text-3xl font-black mb-4 text-brand-gold">מריאל טהר אלדמע</h3>
-                    <p class="text-gray-200">מורה ומנחה לחקירה תודעתית, הידועה ביכולתה לתרגם מושגים מופשטים לכלים מעשיים וחיוניים לחיים עצמם.</p>
+                    <h3 class="text-3xl font-black mb-4 text-brand-blue">מריאל טהר אלדמע</h3>
+                    <p class="text-gray-900">מורה ומנחה לחקירה תודעתית, הידועה ביכולתה לתרגם מושגים מופשטים לכלים מעשיים וחיוניים לחיים עצמם.</p>
                 </div>
             </div>
         </section>
 
         <!-- מקטע מנהלה, עלויות והשקעה - נקי מאייקונים ואימוג'יס -->
-        <section class="container mx-auto max-w-4xl bg-brand-dark/85 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-xl border-2 border-brand-gold relative overflow-hidden dynamic-element">
-            <h2 class="text-3xl md:text-5xl font-black mb-10 text-center text-brand-gold drop-shadow">פרטים ומנהלה</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+        <section class="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl shadow-xl border-2 border-brand-gold relative overflow-hidden dynamic-element">
+            <h2 class="text-3xl md:text-5xl font-black mb-10 text-center text-brand-blue">פרטים ומנהלה</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- קופסת עלות והרשמה מוקדמת -->
-                <div class="bg-white/5 p-6 rounded-2xl border-r-4 border-brand-gold backdrop-blur-sm space-y-4">
+                <div class="bg-[#FDFBF7] p-6 rounded-2xl border-r-4 border-brand-gold space-y-4">
                     <h4 class="text-xl font-black text-brand-gold">עלות הקורס והטבת רישום</h4>
-                    <p class="text-3.5xl font-black text-white">
-                        <span class="text-brand-gold">800 ₪</span> 
+                    <p class="text-3.5xl font-black text-brand-blue">
+                        <span class="text-brand-gold">800 ₪</span>
                         <span class="text-lg line-through text-gray-400 font-bold mr-2">1,200 ₪</span>
                     </p>
-                    <p class="text-base text-gray-100 font-bold leading-relaxed">
+                    <p class="text-base text-gray-900 font-bold leading-relaxed">
                         המחיר המיוחד תקף להרשמה מוקדמת בלבד! השקעה חד פעמית בכלים של פעם בחיים.
                     </p>
                 </div>
 
                 <!-- קופסת מתכונת ומסלולים -->
-                <div class="bg-white/5 p-6 rounded-2xl border-r-4 border-brand-blue backdrop-blur-sm space-y-4">
+                <div class="bg-[#FDFBF7] p-6 rounded-2xl border-r-4 border-brand-blue space-y-4">
                     <h4 class="text-xl font-black text-brand-gold">מתכונת ומסלולי לימוד</h4>
-                    <p class="text-lg text-white">
+                    <p class="text-lg text-gray-900">
                         <span class="text-brand-gold font-extrabold">קבוצות קטנות:</span> לימוד פרונטלי אינטימי ומעמיק.
                     </p>
-                    <p class="text-lg text-white">
+                    <p class="text-lg text-gray-900">
                         <span class="text-brand-gold font-extrabold">גמישות מרבית:</span> אפשרות למסלול לימודי בוקר או ערב.
                     </p>
                 </div>
 
                 <!-- קופסת מיקום וסגירת קבוצות -->
-                <div class="bg-white/5 p-6 rounded-2xl border-r-4 border-brand-blue backdrop-blur-sm space-y-4">
+                <div class="bg-[#FDFBF7] p-6 rounded-2xl border-r-4 border-brand-blue space-y-4">
                     <h4 class="text-xl font-black text-brand-gold">מיקום ונגישות</h4>
-                    <p class="text-lg text-white leading-relaxed">
+                    <p class="text-lg text-gray-900 leading-relaxed">
                         הלימודים מתקיימים במיקום נגיש, <span class="text-brand-gold font-extrabold">סמוך לצומת סביון</span> (סמוך לקריה האקדמית אונו), עם חניה בשפע ונגישות תחבורתית אופטימלית.
                     </p>
                 </div>
 
                 <!-- הזמנת קבוצות פרטיות -->
-                <div class="bg-white/5 p-6 rounded-2xl border-r-4 border-brand-gold backdrop-blur-sm space-y-4">
+                <div class="bg-[#FDFBF7] p-6 rounded-2xl border-r-4 border-brand-gold space-y-4">
                     <h4 class="text-xl font-black text-brand-gold">הזמנה לקבוצות סגורות</h4>
-                    <p class="text-base text-gray-200 leading-relaxed font-bold">
+                    <p class="text-base text-gray-900 leading-relaxed font-bold">
                         רוצים לעבור את המסע התודעתי המיוחד הזה יחד? <span class="text-brand-gold">ניתן להזמין את הקורס במיוחד עבור קבוצה מאורגנת מראש</span> (חברים, צוותי עבודה או קהילות) בתנאים ייחודיים ובמועדים מותאמים אישית.
                     </p>
                 </div>
@@ -385,65 +350,65 @@
         </section>
 
         <!-- הטבת המשך - מעודכן ל-15% כולל הקורס החדש -->
-        <section class="container mx-auto max-w-3xl bg-brand-dark/80 backdrop-blur-md p-10 rounded-3xl border-2 border-brand-gold text-center shadow-lg">
-            <h3 class="text-3xl font-black text-brand-gold mb-6">ממשיכים לצמוח בסימיליה</h3>
-            <p class="text-xl font-bold mb-6 text-gray-200">בוגרי הקורס נהנים מ-15% הנחה לרישום לאחד מקורסי ההמשך המתקדמים:</p>
-            <div class="flex flex-wrap justify-center gap-4 text-lg font-black text-white">
-                <span class="bg-white/10 text-white px-4 py-2 rounded-lg border border-white/20 backdrop-blur-sm">שער הגלגולים</span>
-                <span class="bg-white/10 text-white px-4 py-2 rounded-lg border border-white/20 backdrop-blur-sm">חלימה ערה ומסע אסטראלי</span>
-                <span class="bg-white/10 text-white px-4 py-2 rounded-lg border border-white/20 backdrop-blur-sm">קורס הומאופתיה ביתית - עזרה ראשונה</span>
-                <span class="bg-white/10 text-white px-4 py-2 rounded-lg border border-white/20 backdrop-blur-sm">קונסטלציה טקסית*</span>
+        <section class="container mx-auto max-w-3xl bg-white p-10 rounded-3xl border-2 border-brand-gold text-center shadow-lg">
+            <h3 class="text-3xl font-black text-brand-blue mb-6">ממשיכים לצמוח בסימיליה</h3>
+            <p class="text-xl font-bold mb-6 text-gray-900">בוגרי הקורס נהנים מ-15% הנחה לרישום לאחד מקורסי ההמשך המתקדמים:</p>
+            <div class="flex flex-wrap justify-center gap-4 text-lg font-black text-brand-blue">
+                <span class="bg-[#F4F1EA] px-4 py-2 rounded-lg border border-brand-gold/30">שער הגלגולים</span>
+                <span class="bg-[#F4F1EA] px-4 py-2 rounded-lg border border-brand-gold/30">חלימה ערה ומסע אסטראלי</span>
+                <span class="bg-[#F4F1EA] px-4 py-2 rounded-lg border border-brand-gold/30">קורס הומאופתיה ביתית - עזרה ראשונה</span>
+                <span class="bg-[#F4F1EA] px-4 py-2 rounded-lg border border-brand-gold/30">קונסטלציה טקסית*</span>
             </div>
-            <p class="text-sm mt-4 text-red-400 font-bold">*ההנחה בגובה 15% היא עבור הקורס ואינה כוללת את ערכת העבודה</p>
+            <p class="text-sm mt-4 text-red-600 font-bold">*ההנחה בגובה 15% היא עבור הקורס ואינה כוללת את ערכת העבודה</p>
         </section>
 
         <!-- שאלות נפוצות (FAQ) -->
         <section class="container mx-auto max-w-4xl px-4">
-            <h2 class="text-3xl md:text-5xl font-black mb-10 text-center text-brand-gold drop-shadow">שאלות נפוצות</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-10 text-center text-brand-blue">שאלות נפוצות</h2>
             <div class="space-y-6">
-                <div class="bg-brand-dark/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-brand-gold/40 shadow-lg">
-                    <h3 class="text-xl md:text-2xl font-black text-brand-gold mb-3">מה זה הקורס "תפקידו של האדם בעולם"?</h3>
-                    <p class="text-gray-100 leading-relaxed text-lg">סמינר עומק חווייתי מבית סימיליה, המשלב מדע ותודעה גבוהה, ומיועד להבין את מקומו וייעודו הפעיל של האדם בתוך ממלכת הבריאה - מעבר לשאלת "מה היקום נותן לי" אל השאלה "מה תפקידי בתוכו".</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-brand-blue/20 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-3">מה זה הקורס "תפקידו של האדם בעולם"?</h3>
+                    <p class="text-gray-900 leading-relaxed text-lg">סמינר עומק חווייתי מבית סימיליה, המשלב מדע ותודעה גבוהה, ומיועד להבין את מקומו וייעודו הפעיל של האדם בתוך ממלכת הבריאה - מעבר לשאלת "מה היקום נותן לי" אל השאלה "מה תפקידי בתוכו".</p>
                 </div>
-                <div class="bg-brand-dark/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-brand-gold/40 shadow-lg">
-                    <h3 class="text-xl md:text-2xl font-black text-brand-gold mb-3">למי מיועד הסמינר?</h3>
-                    <p class="text-gray-100 leading-relaxed text-lg">לכל מי שמחפש להעמיק את ההיכרות עם עצמו ולהבין את תפקידו הייחודי בעולם, ללא צורך ברקע קודם בקבלה, פילוסופיה או עבודה תודעתית.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-brand-blue/20 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-3">למי מיועד הסמינר?</h3>
+                    <p class="text-gray-900 leading-relaxed text-lg">לכל מי שמחפש להעמיק את ההיכרות עם עצמו ולהבין את תפקידו הייחודי בעולם, ללא צורך ברקע קודם בקבלה, פילוסופיה או עבודה תודעתית.</p>
                 </div>
-                <div class="bg-brand-dark/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-brand-gold/40 shadow-lg">
-                    <h3 class="text-xl md:text-2xl font-black text-brand-gold mb-3">כמה מפגשים כולל הקורס?</h3>
-                    <p class="text-gray-100 leading-relaxed text-lg">הקורס בנוי משישה מפגשים מרוכזים, המובילים משלב היכרות עם התבנית העליונה ועד למפגש הנעילה והאינטגרציה.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-brand-blue/20 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-3">כמה מפגשים כולל הקורס?</h3>
+                    <p class="text-gray-900 leading-relaxed text-lg">הקורס בנוי משישה מפגשים מרוכזים, המובילים משלב היכרות עם התבנית העליונה ועד למפגש הנעילה והאינטגרציה.</p>
                 </div>
-                <div class="bg-brand-dark/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-brand-gold/40 shadow-lg">
-                    <h3 class="text-xl md:text-2xl font-black text-brand-gold mb-3">האם נדרש ידע מוקדם בקבלה או בתודעה?</h3>
-                    <p class="text-gray-100 leading-relaxed text-lg">לא. הסמינר מתורגם לשפה מעשית וברורה, כך שגם מי שמגיע ללא רקע קודם יכול להטמיע את הכלים וליישם אותם בחיי היומיום.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-brand-blue/20 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-3">האם נדרש ידע מוקדם בקבלה או בתודעה?</h3>
+                    <p class="text-gray-900 leading-relaxed text-lg">לא. הסמינר מתורגם לשפה מעשית וברורה, כך שגם מי שמגיע ללא רקע קודם יכול להטמיע את הכלים וליישם אותם בחיי היומיום.</p>
                 </div>
-                <div class="bg-brand-dark/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-brand-gold/40 shadow-lg">
-                    <h3 class="text-xl md:text-2xl font-black text-brand-gold mb-3">איפה מתקיים הקורס?</h3>
-                    <p class="text-gray-100 leading-relaxed text-lg">הלימודים מתקיימים במיקום נגיש סמוך לצומת סביון (סמוך לקריה האקדמית אונו), עם אפשרות למסלול בוקר או ערב.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-brand-blue/20 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-3">איפה מתקיים הקורס?</h3>
+                    <p class="text-gray-900 leading-relaxed text-lg">הלימודים מתקיימים במיקום נגיש סמוך לצומת סביון (סמוך לקריה האקדמית אונו), עם אפשרות למסלול בוקר או ערב.</p>
                 </div>
             </div>
         </section>
 
         <!-- בלוק הרשמה וסגירה ממוקד בסוף הדף -->
-        <footer id="register-section" class="container mx-auto max-w-2xl bg-brand-dark/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border-4 border-brand-blue">
-            <h2 class="text-3xl font-black mb-8 text-center text-brand-gold">הרשמה לשיחת התאמה</h2>
-            
+        <footer id="register-section" class="container mx-auto max-w-2xl bg-[#FDFBF7] p-10 rounded-3xl shadow-2xl border-4 border-gray-200">
+            <h2 class="text-3xl font-black mb-8 text-center text-brand-blue">הרשמה לשיחת התאמה</h2>
+
             <!-- אזור הודעת הצלחה מובנה במקום alert מיושן -->
-            <div id="success_box" class="hidden p-6 bg-green-950/80 border-2 border-green-500 rounded-2xl text-center mb-6 backdrop-blur-sm">
-                <p class="text-2xl text-green-400 font-black mb-2">תודה רבה, הפרטים התקבלו!</p>
-                <p class="text-green-300 font-bold">הפרטים שלך נרשמו בהצלחה. נציג מסימיליה יחזור אליך בהקדם לתיאום שיחת ההתאמה שלך.</p>
+            <div id="success_box" class="hidden p-6 bg-green-50 border-2 border-green-400 rounded-2xl text-center mb-6">
+                <p class="text-2xl text-green-700 font-black mb-2">תודה רבה, הפרטים התקבלו!</p>
+                <p class="text-green-700 font-bold">הפרטים שלך נרשמו בהצלחה. נציג מסימיליה יחזור אליך בהקדם לתיאום שיחת ההתאמה שלך.</p>
             </div>
 
             <form id="lead_submission_form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                <input type="text" id="form_name" placeholder="שם מלא" required class="w-full p-4 rounded-xl border-2 border-brand-gold/50 bg-[#070B16]/70 text-white placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20">
-                <input type="tel" id="form_phone" placeholder="טלפון נייד" required class="w-full p-4 rounded-xl border-2 border-brand-gold/50 bg-[#070B16]/70 text-white placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 text-right">
-                <div class="flex gap-6 font-bold text-base justify-center text-gray-200">
+                <input type="text" id="form_name" placeholder="שם מלא" required class="w-full p-4 rounded-xl border-2 border-gray-400 bg-white text-gray-900 placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20">
+                <input type="tel" id="form_phone" placeholder="טלפון נייד" required class="w-full p-4 rounded-xl border-2 border-gray-400 bg-white text-gray-900 placeholder-gray-400 font-bold text-lg focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 text-right">
+                <div class="flex gap-6 font-bold text-base justify-center text-gray-900">
                     <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="track" checked class="accent-brand-blue h-5 w-5"> מסלול בוקר</label>
                     <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="track" class="accent-brand-blue h-5 w-5"> מסלול ערב</label>
                 </div>
-                
+
                 <!-- תיבת סימון לקבלת דיוור ואסמסים בהתאם לחוקי מדינת ישראל (לא מסומנת כברירת מחדל) -->
-                <div class="flex items-start gap-3 text-right text-gray-300 text-sm bg-white/5 p-4 rounded-xl border border-white/10 mt-4">
+                <div class="flex items-start gap-3 text-right text-gray-900 text-sm bg-white p-4 rounded-xl border-2 border-gray-300 mt-4">
                     <input type="checkbox" id="marketing_consent" name="marketing_consent" class="accent-brand-gold h-5 w-5 mt-1 cursor-pointer rounded">
                     <label for="marketing_consent" class="cursor-pointer leading-relaxed select-none">
                         אני מאשר/ת קבלת עדכונים, תכנים בעלי ערך, הצעות שיווקיות ודיוור פרסומי מסימיליה באמצעות SMS, דוא"ל, וואטסאפ או אמצעי תקשורת אחרים. ידוע לי כי אוכל להסיר את עצמי מרשימת התפוצה בכל עת ובקלות.
@@ -455,24 +420,24 @@
                     שליחה
                 </button>
             </form>
-            
-            <div class="mt-12 text-center border-t border-white/10 pt-8">
-                <p class="text-gray-300 mb-4 text-xl font-black">רוצים תשובה מיידית?</p>
+
+            <div class="mt-12 text-center border-t border-gray-200 pt-8">
+                <p class="text-gray-900 mb-4 text-xl font-black">רוצים תשובה מיידית?</p>
                 <a href="https://wa.me/972524472017?text=היי,%20אשמח%20לשריין%20את%20מחיר%20ההרשמה%20המוקדמת%20לקורס%20תפקידו%20של%20האדם%20בעולם" target="_blank" class="dynamic-btn inline-block bg-[#25d366] text-white font-black py-5 px-10 rounded-xl text-xl hover:bg-green-600 btn-press shadow-md">סגירת פרטים מהירה בוואטסאפ</a>
             </div>
         </footer>
     </main>
 
     <!-- footer תחתון הכולל את פרטי בית הספר והבהרה משפטית -->
-    <footer class="w-full text-center py-12 mt-16 border-t border-white/10 text-gray-400 text-sm space-y-4">
+    <footer class="w-full text-center py-12 mt-16 border-t border-gray-300 text-gray-500 text-sm space-y-4">
         <!-- פרטי בית הספר המבוקשים -->
-        <div class="text-white text-xl md:text-2xl font-black space-y-2 px-4">
-            <p class="text-brand-gold">סימיליה - בית להומאופתיה קלאסית, צמיחה והתפתחות</p>
-            <p><a href="https://similia.co.il" target="_blank" class="text-white hover:text-brand-gold underline transition">similia.co.il</a></p>
+        <div class="text-brand-dark text-xl md:text-2xl font-black space-y-2 px-4">
+            <p class="text-brand-blue">סימיליה - בית להומאופתיה קלאסית, צמיחה והתפתחות</p>
+            <p><a href="https://similia.co.il" target="_blank" class="text-brand-dark hover:text-brand-gold underline transition">similia.co.il</a></p>
         </div>
-        
-        <div class="max-w-2xl mx-auto px-6 leading-relaxed text-xs text-gray-500 font-medium pt-4 space-y-2">
-            <p class="text-gray-400">
+
+        <div class="max-w-2xl mx-auto px-6 leading-relaxed text-xs text-gray-400 font-medium pt-4 space-y-2">
+            <p>
                 © כל הזכויות שמורות ל-סימיליה בית ללימודי הומאופתיה קלאסית, צמיחה והתפתחות. אין להעתיק, לשכפל, להפיץ או למכור שום חלק מדף זה ללא אישור מפורש בכתב מבעל הזכויות. 2026
             </p>
             <p>
