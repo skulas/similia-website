@@ -145,7 +145,7 @@ Also check for **hardcoded hex colors** outside the Tailwind config (inline `<st
   "datePublished": "YYYY-MM-DD", "dateModified": "YYYY-MM-DD",
   "mainEntityOfPage": "https://similia.co.il/blog/<slug>/",
   "image": "https://similia.co.il/logo-similia.jpg",
-  "author": { "@type": "Person", "name": "מריאל טהר אלדמע", "jobTitle": "מייסדת  ומנהלת את סימליה ,בית להומאופתיה ותודעה גבוה, הומאופתית קלאסית" },
+  "author": { "@type": "Person", "name": "מריאל טהר אלדמע", "jobTitle": "הומאופתית קלאסית, מייסדת ומנהלת סימיליה – בית להומאופתיה ותודעה גבוהה" },
   "publisher": {
     "@type": "EducationalOrganization", "name": "סימיליה",
     "alternateName": "Similia - Homeopathy, Growth, Self-Development",
@@ -180,6 +180,10 @@ For a blog post, use the blog-family footer instead (see `blog/homeopathy-and-ka
 ## 7. Update `sitemap.xml`
 
 Add a `<url>` entry matching the pattern of similar existing pages (courses: `priority 0.8, changefreq monthly`; blog posts: `priority 0.6, changefreq yearly`), `lastmod` = today.
+
+Also add the page to `llms.txt` at the repo root (under the matching heading, one line: link + short factual description). AI agents read this file to understand what Similia offers.
+
+**Keep content in the HTML, not in JS.** Drafts often hold their main content (item lists, descriptions, FAQs) in a JS array rendered at runtime. Most AI crawlers (GPTBot, ClaudeBot, PerplexityBot) don't run JS and would see an almost empty page. Write that content as static HTML and let JS only add interaction (e.g. a dialog that clones a hidden detail block — see `treatments/index.html`). Internal links should be real `<a href>` elements in the HTML.
 
 ## 8. Verify before reporting done
 
